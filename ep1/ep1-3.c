@@ -41,32 +41,49 @@ int main() {
 		for(j=0;j<MAX;j++)
 			bd[i][j] = 0;
 
-	bd[0][0] = 2;
+	bd[0][0] = 10;
 	bd[1][0] = 5;
-	bd[2][0] = 3;
-	bd[3][0] = 1;
+	bd[2][0] = 16;
+	bd[3][0] = 8;
+	bd[4][0] = 4;
+	bd[5][0] = 2;
+	bd[6][0] = 1;
 	
-	bd[0][1] = 2;
-	bd[1][1] = 4;
-	bd[2][1] = 2;
-	bd[3][1] = 5;
+	bd[0][1] = 11;
+	bd[1][1] = 34;
+	bd[2][1] = 17;
+	bd[3][1] = 52;
+	bd[4][1] = 26;
+	bd[5][1] = 13;
+	bd[6][1] = 40;
+	bd[7][1] = 20;
+	bd[8][1] = 10;
+
+	bd[0][2] = 13;
+	bd[1][2] = 40;
+
 	
 	printf("\n Matriz:");
 	j=0;
-	for (i=0;i!=5;i++ ){
+	for (i=0;i!=12;i++ ){
 		printf("\n");
-		for(j=0;bd[i][j]!=0;j++)
+		for(j=0;j!=12;j++) /* Enquanto bd[i][j]!=0*/
 			printf("%d ",bd[i][j]);
 	}	
 	
 	printf("\n Procurar/iterar ");
-	num = procura(bd,2,5,5,pcont,pachou);
-	printf("-------O valor e: %d\n", num);
+
+	printf("-------Procurando por 10 valor e: %d\n",procura(bd,10,12,12,pcont,pachou));
 	*pcont = *pachou =0;
 	
-	printf("-------Procurando por 4 e: %d\n", procura(bd,4,5,5,pcont,pachou));
+	printf("-------Procurando por 11 e: %d\n", procura(bd,11,12,12,pcont,pachou));
 	*pcont = *pachou =0;
-	printf("-------Procurando por 3 e: %d\n", procura(bd,3,5,5,pcont,pachou));
+	
+	return 0;
+	printf("-------Procurando por 12 e: %d\n", procura(bd,12,12,12,pcont,pachou));
+	*pcont = *pachou =0;
+	
+	printf("-------Procurando por 13 e: %d\n", procura(bd,13,12,12,pcont,pachou));
 	*pcont = *pachou =0;
 	
 	return 0;
@@ -84,26 +101,25 @@ int procura (int bd[MAX][MAX], int num, int ultx, int ulty, int *pcont, int *pac
  * contrário */
 	printf("Entrou \n");
 	printf("\n Procuramos por: %d\n",num);
-	int i,j,col = 0,n,ult,add=0;
-	
+	int i,j,col = 0,n,ult=0,add=0,parar=0,ultl=0;
 	n=num;
-	
-	for (i=1; i < ultx; i++) {
-			printf("linha %d\n",i);
-			for (j=0; j < ulty; j++) {
-				printf("coluna %d\n",j);
+	i=0;
+	for (j=0; ultl == 0 && j < 12 ; j++) {
+			printf("Coluna -- %d\n",j);
+			for (i=0; bd[i][j]!=1 && i < 12 ; i++) {
+				printf("Linha %d\n",i);
 				printf("%d\n",bd[i][j]);
-				if (bd[i][j] == n) {
+				if ((bd[i][j] == n) && ((i!=ultx) && (j!=ulty))) {
 					printf("achou\n");
 					(*pachou)++;
-
+					/*
 					if (i == 1){
 						printf("\n Topo: %d e cont: %d\n",bd[0][j],*pcont);
 						printf("Achou : %d\n",*pachou);
 						printf("\n Primeiro return");
 						if(bd[i+bd[0][j]][j] == 1) return bd[0][j];
 					}
-					
+					*/
 					printf("else\n");
 					col = j;
 					for (col = j;bd[i][col] != 0; i ++) {
@@ -122,17 +138,20 @@ int procura (int bd[MAX][MAX], int num, int ultx, int ulty, int *pcont, int *pac
 					
 					if (ult != 1) {
 						printf("\n if dif 1");
+						printf("Ultx: %d e ulty: %d",ultx,ulty);
 						add = procura (bd,ult,ultx,ulty,pcont,pachou);
 						printf("\n add: %d",add);
 					}
 					else {
 						printf("Cont : %d e Achou : %d\n",*pcont,*pachou);
 						printf("Segundo return");
+						ultl=1;
 						return *pcont ;	
 					}
+					
 						
 				}
-			}	
+			}
 	}
 	
 	printf("\n Ultimo return");
