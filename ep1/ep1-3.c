@@ -77,7 +77,7 @@ int main() {
 	}	
 	
 	printf("\n Procurar/iterar ");
-/*
+
 	printf("-------Procurando por 10 valor e: %d\n",procura(bd,10,12,12,pcont,pachou));
 	*pcont = *pachou =0;
 	
@@ -85,7 +85,6 @@ int main() {
 	*pcont = *pachou =0;
 	
 	printf("-------Procurando por 12 e: %d\n", procura(bd,12,12,12,pcont,pachou));
-	*/
 	*pcont = *pachou =0;
 	
 	printf("-------Procurando por 13 e: %d\n", procura(bd,13,12,12,pcont,pachou));
