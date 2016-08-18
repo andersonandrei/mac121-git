@@ -59,8 +59,13 @@ int main() {
 	bd[7][1] = 20;
 	bd[8][1] = 10;
 
-	bd[0][2] = 13;
-	bd[1][2] = 40;
+	bd[0][2] = 12;
+	bd[1][2] = 6;
+	bd[2][2] = 3;
+	bd[3][2] = 10;
+
+	bd[0][3] = 21;
+	bd[1][4] = 40;
 
 	
 	printf("\n Matriz:");
@@ -72,19 +77,22 @@ int main() {
 	}	
 	
 	printf("\n Procurar/iterar ");
-
+/*
 	printf("-------Procurando por 10 valor e: %d\n",procura(bd,10,12,12,pcont,pachou));
 	*pcont = *pachou =0;
 	
 	printf("-------Procurando por 11 e: %d\n", procura(bd,11,12,12,pcont,pachou));
 	*pcont = *pachou =0;
 	
-	return 0;
 	printf("-------Procurando por 12 e: %d\n", procura(bd,12,12,12,pcont,pachou));
+	*/
 	*pcont = *pachou =0;
 	
 	printf("-------Procurando por 13 e: %d\n", procura(bd,13,12,12,pcont,pachou));
-	*pcont = *pachou =0;
+	return 0;
+	
+	*pcont = 0;
+	*pachou =0;
 	
 	return 0;
 }
@@ -101,7 +109,7 @@ int procura (int bd[MAX][MAX], int num, int ultx, int ulty, int *pcont, int *pac
  * contrário */
 	printf("Entrou \n");
 	printf("\n Procuramos por: %d\n",num);
-	int i,j,col = 0,n,ult=0,add=0,parar=0,ultl=0;
+	int i,j,col = 0,n,ult=0,add=0,parar=0,ultl=0,contRec=0;
 	n=num;
 	i=0;
 	for (j=0; ultl == 0 && j < 12 ; j++) {
@@ -140,6 +148,7 @@ int procura (int bd[MAX][MAX], int num, int ultx, int ulty, int *pcont, int *pac
 						printf("\n if dif 1");
 						printf("Ultx: %d e ulty: %d",ultx,ulty);
 						add = procura (bd,ult,ultx,ulty,pcont,pachou);
+						contRec++;
 						printf("\n add: %d",add);
 					}
 					else {
@@ -155,7 +164,7 @@ int procura (int bd[MAX][MAX], int num, int ultx, int ulty, int *pcont, int *pac
 	}
 	
 	printf("\n Ultimo return");
-	
+	add-=contRec*add;
 	return *pcont+add;
 	
 }
