@@ -3,21 +3,22 @@
 int verifica (int n);
 
 int main() {
-		int i,f,num,fn,interv,aux,cont = 0;
+		int num,fn,interv,aux,cont = 0;
+		long int i,f;
 		
-		scanf("%d %d",&i,&f);
+		scanf("%ld %ld",&i,&f);
 		interv = f - i;
 		fn = i;
 		
 		while(interv >= 0) {
 			aux = fn;
-			printf("\n Fazedno %d\n ",fn);
+			/* printf("\n Fazedno %d\n ",fn); */
 			while(aux != 1) {
 					aux = verifica(aux);
-					printf("%d\n", aux);
+					/*printf("%d\n", aux); */
 					cont ++;
 			}
-			printf("%d \n",cont);
+			printf("%d \n",cont); 
 			fn++;
 			interv --;
 			cont = 0;
