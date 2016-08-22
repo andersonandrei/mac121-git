@@ -54,7 +54,7 @@ int main() {
 						
 						inic = tam;
 						tam *=2;
-						initVetor(prox,inic,tam);
+						for (i=inic;i<tam;i++) prox[i] = -2;
 						
 						printf("\n tamanho do vetor: %d",tam);
 					}
