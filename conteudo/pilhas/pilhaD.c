@@ -9,7 +9,8 @@ typedef struct {
 
 pilha *criaPilha (int n) {
 	pilha *p;
-	p = malloc (n * sizeof (pilha));
+	p = malloc (sizeof (pilha));
+	p->v = malloc(n * sizeof(int));
 	p->tam = n;
 	p->topo = 0;
 	return p;
@@ -24,46 +25,44 @@ int pilhaCheia (pilha *p) {
 }
 
 int desempilha (pilha *p) {
+	int x;
 	if (pilhaVazia(p)) {
 		printf("\n Erro: Pilha vazia");
 		return 0;
 	}
 	else {
-		int x = p->v[p->topo-1];
+		x = p->v[p->topo-1];
 		p->topo--;
 		return x;
 	}
 }
 
 void empilha (pilha *p, int n) {
-	printf("\n Entrou na func!");
-	printf("\n Cheia/ R:%d",pilhaCheia(p));
-	if (pilhaCheia (p) == 0) {
-		p->v[p->topo] = n;
-		p->topo++;
-		fflush(stdout);
-	}
+	printf("\n Entrou com :%d",n);
 	
-	else {
-		printf("\n Pilha cheia, tentaremos dobrar seu tamanho.\n");
-		p = realloc (p, (p->tam)* 2 * sizeof(pilha));
-		if( p == NULL) {
-			printf("\n É... não deu.");
-			free(p);
+	if (pilhaCheia(p)) {
+		printf("\n Pilha cheia, vamos realocar com o dobro de espaço!");
+		p->v = realloc (p->v, (2 * (p->tam)) * sizeof(int));
+		if (p == NULL) {
+			printf("\n Não foi possível realocar, sorry.");
+			fflush(stdout);
+			return;
 		}
-		else
-			p->v[p->topo++] = n;
 	}
-	
+	printf("\n Topo atual: %d",p->topo);
+	p -> v[p -> topo] = n;
+	p->topo++;
+	printf("\n Topo agr: %d",p->topo);
+
 	return;
 }
 
 int main() {
 	pilha *pi;
 	int tamanho;
-	int i,j;
+	int j;
 	
-	printf("\n Comecemos a brincar com pilhas alocadas dinamicamente: \n");
+	printf("\n Comecemos a brincar com pilhas alocadas dinamicamente:");
 	printf("\n Qual tamanho da pilha: \n");
 	scanf("%d",&tamanho);
 	
@@ -71,19 +70,14 @@ int main() {
 	printf("Criou! \n");
 	
 	j=10;
-	
-	printf("\n Cheia/ R:%d",!pilhaCheia(pi));
 	empilha( pi, 10);
-	printf("\n Empilhou!");	
-	fflush(stdout);
-	while (!pilhaCheia (pi)) {
-		printf("\n Entrou");
-		
-		j++;
-	}
+	empilha( pi, 11);
+	empilha( pi, 12);
 	
-	printf("Olha o topo: ");
-	desempilha(pi);
+	printf("\n Empilhou: %d",pi->v[pi->topo-1]);
+
+	printf("\nOlha o topo: %d ",desempilha(pi));
+	
 	
 	return 0;		
 }
