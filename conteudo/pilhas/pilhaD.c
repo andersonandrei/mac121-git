@@ -1,11 +1,6 @@
+#include "pilhaD.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct {
-	int topo;
-	int *v;
-	int tam;
-} pilha;
 
 pilha *criaPilha (int n) {
 	pilha *p;
@@ -38,24 +33,29 @@ int desempilha (pilha *p) {
 }
 
 void empilha (pilha *p, int n) {
-	printf("\n Entrou com :%d",n);
-	
 	if (pilhaCheia(p)) {
 		printf("\n Pilha cheia, vamos realocar com o dobro de espaço!");
 		p->v = realloc (p->v, (2 * (p->tam)) * sizeof(int));
 		if (p == NULL) {
 			printf("\n Não foi possível realocar, sorry.");
-			fflush(stdout);
 			return;
 		}
 	}
-	printf("\n Topo atual: %d",p->topo);
-	p -> v[p -> topo] = n;
+	p->v[p -> topo] = n;
 	p->topo++;
-	printf("\n Topo agr: %d",p->topo);
-
 	return;
 }
+
+void imprimePilha(pilha *p) {
+	while (pilhaVazia(p) == 0){
+		printf("%d \n",desempilha(p));
+	}
+	return;
+}
+
+int main() { return 0;}
+
+/* main que fiz pra testar
 
 int main() {
 	pilha *pi;
@@ -67,18 +67,16 @@ int main() {
 	scanf("%d",&tamanho);
 	
 	pi = criaPilha (tamanho);
-	printf("Criou! \n");
 	
 	j=10;
-	empilha( pi, 10);
-	empilha( pi, 11);
-	empilha( pi, 12);
+	while (j>1) {
+		empilha(pi,j);
+		j--;
+	}
 	
-	printf("\n Empilhou: %d",pi->v[pi->topo-1]);
-
-	printf("\nOlha o topo: %d ",desempilha(pi));
-	
+	imprimePilha(pi);
 	
 	return 0;		
 }
 
+*/
