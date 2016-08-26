@@ -53,9 +53,11 @@ void imprimePilha(pilha *p) {
 	return;
 }
 
-int main() { return 0;}
+
 
 /* main que fiz pra testar
+
+int main() { return 0;}
 
 int main() {
 	pilha *pi;
