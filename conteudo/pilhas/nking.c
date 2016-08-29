@@ -34,11 +34,29 @@ int main() {
 	printf("Brincando com as N-Kings\n");
 	int **tabuleiro;
 	pilha *colunas;
-	int col,rainha,n
+	int col,rainha,n,i,j,ok=0;
 	
 	tabuleiro = criaMatriz(4);
-	
 	colunas = criaPilha(4);
+	
+	for (i=0; i<n; i++ ){
+		for(j=0; j<n; j++)
+			tabuleiro[i][j] = 0;
+	
+	rainha =1;
+	i=0;
+	while (rainha < n) {
+		col=0;
+		while (col < n && ok ==0) {
+			if(livre (tab,rainha,i,col)) ok = 1;
+			else col++;
+		} 
+		
+		if (ok == 1) {
+			
+			
+		}
+	}
 	
 	
 	
