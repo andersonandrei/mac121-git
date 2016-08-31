@@ -6,7 +6,7 @@ typedef struct {
 
 pilha *criaPilha (int n);
 
-int pilhaVazia(pilha p);
+int pilhaVazia(pilha *p);
 
 int pilhaCheia (pilha *p);
 
