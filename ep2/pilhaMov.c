@@ -30,10 +30,13 @@ void desempilha (pilha *p, movimento *mov) {
 		mov->mv = auxm.mv;
 		mov->l = auxm.l;
 		mov->c = auxm.c;
+		printf("\n ---->>>>Desempilhou: lin = %d, col = %d, mov = %d",auxm.l,auxm.c,auxm.mv);
 	}
 }
 
 void empilha (pilha *p, movimento n) {
+	printf("\n Entrou pilha");
+	fflush(stdout);
 	if (pilhaCheia(p)) {
 		printf("\n Pilha cheia, vamos realocar com o dobro de espaço!");
 		p->v = realloc (p->v, (2 * (p->tam)) * sizeof(int));
@@ -42,6 +45,7 @@ void empilha (pilha *p, movimento n) {
 			return;
 		}
 	}
+	printf("\n ---->>>>Empilhou: lin = %d, col = %d, mov = %d",n.l,n.c,n.mv);
 	p->v[p -> topo] = n;
 	p->topo++;
 	return;
