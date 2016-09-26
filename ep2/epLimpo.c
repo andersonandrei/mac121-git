@@ -280,8 +280,8 @@ int restaUm(int **tab, int lin, int col) {
 					}
 				}
 			}
-			/* Se saiu do while de dentro entao m = 4 ou moveu = 0 */
-			if (moveu == 0) { /* Entao m = 4*/
+			/* Se saiu do while de dentro entao m = 4 ou moveu = 1 */
+			if (moveu == 0) { /* Então m = 4*/
 				m = 0;
 				if (c == col-1 && l <= lin-2) {
 					l++;
@@ -307,14 +307,6 @@ int restaUm(int **tab, int lin, int col) {
 			moveu = 0;
 			printf("\n --->>>>>>>> m = %d,lin = %d, col = %d",m,l,c);
 			printf("\n --->>>>>>>> tamPilha = %d",tamPilha);
-			/*
-			if (col == 2 && lin <= 5) {
-					lin ++;
-					col = 0;
-			}
-			else 
-				col++;
-			*/
 		}
 		
 		else { /* Backtrack */
@@ -366,13 +358,15 @@ int main () {
 	int m,n;
 	int resta;
 	
-	/*
+	m = 7;
+	n = 7;
+	
 	printf("Insira m,n: ");
 	scanf("%d %d",&m,&n);
-	*/
-	tab = criaMatriz(7,7);
+	
+	tab = criaMatriz(m,n);
 	printf("\n >>>>>>>>>>>>>>>>>>>>Criou");
-	/*
+	
 	printf("Insira a matrix de tamanho %d, %d\n",m,n);
 	for (i = 0 ; i < m; i++) {
 		printf("\n");
@@ -381,13 +375,14 @@ int main () {
 		}
 		
 	}
-	*/
-	montaTabuleiro77(tab);
 	
-	imprimeMatriz(tab,7,7);
+	
+	/* montaTabuleiro77(tab); */
+	
+	imprimeMatriz(tab,m,n);
 	
 	printf("\n Resta um : ");
-	resta = restaUm(tab, 7, 7);
+	resta = restaUm(tab, m, n);
 	printf("\n Resultado = %d\n",resta);
 	
 	return 0;

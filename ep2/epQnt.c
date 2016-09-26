@@ -6,10 +6,11 @@
 
 int podeMover(int **tab, int p, int q, int mov, int m, int n) {
 	if (tab[p][q] == 1) {
-		if (mov == 0 && p >= 2 && tab[p-1][q] == 1 && tab[p-2][q] == -1) return 1;
-		else if (mov == 1 && q >= 2 && tab[p][q-1] == 1 && tab[p][q-2] == -1) return 1;
-		else if (mov == 2 && p < m-2 && tab[p+1][q] == 1 && tab[p+2][q] == -1) return 1;
-		else if (mov == 3 && q < n-2 && tab[p][q+1] == 1 && tab[p][q+2] == -1) return 1;
+		
+		if (mov == 0 && q >= 2 && tab[p][q-1] == 1 && tab[p][q-2] == -1) return 1;
+		else if (mov == 1 && p < m-2 && tab[p+1][q] == 1 && tab[p+2][q] == -1) return 1;
+		else if (mov == 2 && q < n-2 && tab[p][q+1] == 1 && tab[p][q+2] == -1) return 1;
+		else if (mov == 3 && p >= 2 && tab[p-1][q] == 1 && tab[p-2][q] == -1) return 1;
 		else return 0;
 	}
 	else {
@@ -19,28 +20,29 @@ int podeMover(int **tab, int p, int q, int mov, int m, int n) {
 
 void movePeca(int **tab,int *p, int *q, int mov, int *numBrancas, int *numPretas){
 	if (mov == 0) {
-		tab[*p-2][*q] = 1;
-		tab[*p-1][*q] = -1;
-		tab[*p][*q] = -1;
-		*p -= 2;
-	}
-	else if (mov == 1) {
 		tab[*p][*q-2] = 1;
 		tab[*p][*q-1] = -1;
 		tab[*p][*q] = -1;
 		*q -= 2;
 	}
-	else if (mov == 2) {
+	else if (mov == 1) {
 		tab[*p+2][*q] = 1;
 		tab[*p+1][*q] = -1;
 		tab[*p][*q] = -1;
 		*p += 2;
 	}
-	else if (mov == 3) {
+	else if (mov == 2) {
 		tab[*p][*q+2] = 1;
 		tab[*p][*q+1] = -1;
 		tab[*p][*q] = -1;
 		*q += 2;
+	}
+	
+	else if (mov == 3) {
+		tab[*p-2][*q] = 1;
+		tab[*p-1][*q] = -1;
+		tab[*p][*q] = -1;
+		*p -= 2;
 	}
 	*numPretas -=1;
 	*numBrancas += 1;
@@ -48,28 +50,28 @@ void movePeca(int **tab,int *p, int *q, int mov, int *numBrancas, int *numPretas
 
 void voltaPeca(int **tab,int *p, int *q, int mov, int *numBrancas, int *numPretas){
 	if (mov == 0) {
-		tab[*p+2][*q] = 1;
-		tab[*p+1][*q] = 1;
-		tab[*p][*q] = -1;
-		*p += 2;
-	}
-	else if (mov == 1) {
 		tab[*p][*q+2] = 1;
 		tab[*p][*q+1] = 1;
 		tab[*p][*q] = -1;
 		*q += 2;
 	} 
-	else if (mov == 2) {
+	else if (mov == 1) {
 		tab[*p-2][*q] = 1;
 		tab[*p-1][*q] = 1;
 		tab[*p][*q] = -1;
 		*p -= 2;
 	}
-	else if (mov == 3) {
+	else if (mov == 2) {
 		tab[*p][*q-2] = 1;
 		tab[*p][*q-1] = 1;
 		tab[*p][*q] = -1;
 		*q -= 2;
+	}
+	else if (mov == 3) {
+		tab[*p+2][*q] = 1;
+		tab[*p+1][*q] = 1;
+		tab[*p][*q] = -1;
+		*p += 2;
 	}
 	*numPretas +=1;
 	*numBrancas -= 1;
@@ -174,41 +176,6 @@ void montaTabuleiro77(int **tab) {
 	tab[6][6] = 0;
 }
 
-void montaTabuleiro64(int **tab) {
-	tab[0][0] = 1;
-	tab[0][1] = 1;
-	tab[0][2] = 1;
-	tab[0][3] = 1;
-	
-	tab[1][0] = 1;
-	tab[1][1] = 1;
-	tab[1][2] = 1;
-	tab[1][3] = 1;
-	
-	tab[2][0] = 1;
-	tab[2][1] = 1;
-	tab[2][2] = 1;
-	tab[2][3] = 1;
-	
-	tab[3][0] = 1;
-	tab[3][1] = -1;
-	tab[3][2] = 1;
-	tab[3][3] = 1;
-	
-	tab[4][0] = 1;
-	tab[4][1] = 1;
-	tab[4][2] = 1;
-	tab[4][3] = 1;
-	
-	tab[5][0] = 1;
-	tab[5][1] = 1;
-	tab[5][2] = 1;
-	tab[5][3] = 1;
-	
-	
-
-}
-
 void montaTabuleiro33(int **tab) {
 	tab[0][0] = 1;
 	tab[0][1] = 1;
@@ -271,9 +238,10 @@ int restaUm(int **tab, int lin, int col) {
 	int i, j, m, auxl, auxc, l, c;
 	int ok, moveu;
 	int **tabInversa;
-	int numBrancas, numPretas, auxPretas;
+	int numBrancas, numPretas;
 	int iguais;
 	int tamPilha = 0;
+	int jogadas, jogadasMax;
 	
 	numBrancas = numPretas = 0;
 	
@@ -286,7 +254,8 @@ int restaUm(int **tab, int lin, int col) {
 		}
 	}
 	
-	auxPretas = numPretas;
+	jogadas = 0;
+	jogadasMax = numPretas - numBrancas;
 	
 	moves = criaPilha(500);
 	
@@ -301,53 +270,41 @@ int restaUm(int **tab, int lin, int col) {
 	l = c = moveu = 0;
 	m = 0;
 	
-	iguais = comparaMatriz(tab,tabInversa,lin,col);
-	
 	if(numPretas < numBrancas) {
 		printf("Impossivel.\n");
 		return 0;
 	}
 	
-	while (l < lin && iguais == 0) {
-		printf("\n Entrou lin = %d",l);
+	iguais = comparaMatriz(tab,tabInversa,lin,col);
+	
+	while (iguais == 0) {
 		ok = 0;
-		while (c < col && ok == 0) {
-			printf("\n Entrou col = %d",c);
-			printf("\n --->Linhas = %d",l);
-			printf("\n Entrou m =%d",m); 
+		printf("\n >>>>>>>Jogadas num: %d, menor que %d?",jogadas,jogadasMax);
+		while (c < col && ok == 0 && jogadas < jogadasMax) {
+			
 			if (tab[l][c] == 1) {
-				printf("\nAchou\n");
-				printf("\n antes mov= %d",m);
 				while (m < 4 && moveu == 0) {
-					printf("\n mov = %d",m);
 					if (podeMover(tab,l,c,m,lin,col)){
-						printf("\n Pode");
 						ok = 1;
 						moveu = 1;
 					}
 					else {
-						printf("\n movimento++");
 						m++;
 					}
 				}
-				printf("\n Saiu do while dos mov");
 			}
-			/* Se saiu do while de dentro entao m = 4 ou moveu = 0 */
-			if (moveu == 0) { /* Entao m = 4*/
-				printf("\n ok == 0");
+			/* Se saiu do while de dentro entao m = 4 ou moveu = 1 */
+			if (moveu == 0) { /* Então m = 4*/
 				m = 0;
 				if (c == col-1 && l <= lin-2) {
-					printf("\nCol == 2 -> lin++ col = 0\n");
 					l++;
 					c = 0;
 				}
 				else c++;
 			}			
 		}
-		printf("\n Parte dos ok");
 		/* Ou ok = 1 ou = 0 */
 		if (ok == 1) {
-			printf("\n ok");
 			posicao.lin = l;
 			posicao.col = c;
 			auxl = l;
@@ -357,6 +314,7 @@ int restaUm(int **tab, int lin, int col) {
 			mov.c = auxc;
 			mov.mv = m;
 			empilha(moves,mov,&tamPilha);
+			jogadas++;
 			l = 0;
 			c = 0;
 			m = 0;
@@ -380,6 +338,7 @@ int restaUm(int **tab, int lin, int col) {
 				desempilha(moves,&mov,&tamPilha);
 				printf("\n --->>>>>>>> tamPilha = %d",tamPilha);
 				voltaPeca(tab,&(mov.l),&(mov.c),mov.mv,&numBrancas,&numPretas);
+				jogadas--;
 				c = mov.c;
 				l = mov.l;
 				if (mov.mv < 3) {
@@ -388,19 +347,14 @@ int restaUm(int **tab, int lin, int col) {
 				}
 				else { 
 					m = 0;
-					moveu = 0;
 					if (c == col-1 && l <= lin-2) {
-						printf("\nCol == 2 -> lin++ col = 0\n");
-						l++;
+						l ++;
 						c = 0;
 					}
 					else c++;
-					printf("\n Else: Fui pro mov = %d",m);
 				}
-				printf("\n --->>>>Col = %d Lin = %d ",c,l);
 			}
 		}
-		
 		imprimeMatriz(tab,lin,col);
 		iguais = comparaMatriz(tab,tabInversa,lin,col);
 
@@ -419,18 +373,12 @@ int main () {
 	int m,n;
 	int resta;
 	
-	m = 6;
-	n=4;
-	
-	/*
 	printf("Insira m,n: ");
 	scanf("%d %d",&m,&n);
-	*/
 	
 	tab = criaMatriz(m,n);
 	printf("\n >>>>>>>>>>>>>>>>>>>>Criou");
 	
-	/*
 	printf("Insira a matrix de tamanho %d, %d\n",m,n);
 	for (i = 0 ; i < m; i++) {
 		printf("\n");
@@ -439,10 +387,6 @@ int main () {
 		}
 		
 	}
-	*/ 
-	
-	
-	montaTabuleiro64(tab);
 	
 	imprimeMatriz(tab,m,n);
 	
