@@ -21,9 +21,9 @@ int pilhaVazia(pilha *p);
 
 int pilhaCheia (pilha *p);
 
-void desempilha (pilha *p, movimento *mov);
+void desempilha (pilha *p, movimento *mov, int *tam);
 
-void empilha (pilha *p, movimento n);
+void empilha (pilha *p, movimento n, int *tam);
 
 void imprimePilha(pilha *p);
 

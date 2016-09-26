@@ -115,7 +115,7 @@ void imprimeMatriz(int **tab, int n) {
 	}
 	return;
 }
-/*
+
 void montaTabuleiro(int **tab) {
 	tab[0][0] = 0;
 	tab[0][1] = 0;
@@ -173,8 +173,7 @@ void montaTabuleiro(int **tab) {
 	tab[6][5] = 0;
 	tab[6][6] = 0;
 }
-
-*/
+/*
 void montaTabuleiro(int **tab) {
 	tab[0][0] = 1;
 	tab[0][1] = 1;
@@ -189,7 +188,7 @@ void montaTabuleiro(int **tab) {
 	tab[2][2] = -1;
 }
 
-
+*/
 void **inverteMatriz (int **tab, int **tabInversa, int n) {
 	int i,j;
 	for(i=0; i<n; i++) {
@@ -324,17 +323,22 @@ int main() {
 				printf("\n Voltou");
 				desempilha(moves,&mov);
 				voltaPeca(tab,&(mov.l),&(mov.c),mov.mv,&numBrancas,&numPretas);
+				col = mov.c;
+				lin = mov.l;
 				if (mov.mv < 3) {
 					m = mov.mv + 1;
 					printf("\n Fui pro mov = %d",m);
 				}
 				else { 
+					if (col == 6 && lin <= 5) {
+						printf("\nCol == 6 -> lin++ col = 0\n");
+						lin ++;
+						col = 0;
+					}
+					else col++;
 					m = 0;
 					printf("\n Else: Fui pro mov = %d",m);
 				}
-
-				col = mov.c;
-				lin = mov.l;
 				printf("\n --->>>>Col = %d Lin = %d ",col,lin);
 			}
 		}

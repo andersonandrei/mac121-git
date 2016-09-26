@@ -19,7 +19,7 @@ int pilhaCheia (pilha *p) {
 	return p->topo == p->tam; 
 }
 
-void desempilha (pilha *p, movimento *mov) {
+void desempilha (pilha *p, movimento *mov, int *tam) {
 	movimento auxm;
 	if (pilhaVazia(p)) {
 		printf("\n Erro: Pilha vazia");
@@ -30,11 +30,12 @@ void desempilha (pilha *p, movimento *mov) {
 		mov->mv = auxm.mv;
 		mov->l = auxm.l;
 		mov->c = auxm.c;
-		printf("\n ---->>>>Desempilhou: lin = %d, col = %d, mov = %d",auxm.l,auxm.c,auxm.mv);
+		*tam -=1;
+		printf("\n ED---->>>>Desempilhou: lin = %d, col = %d, mov = %d",auxm.l,auxm.c,auxm.mv);
 	}
 }
 
-void empilha (pilha *p, movimento n) {
+void empilha (pilha *p, movimento n, int *tam) {
 	printf("\n Entrou pilha");
 	fflush(stdout);
 	if (pilhaCheia(p)) {
@@ -45,9 +46,10 @@ void empilha (pilha *p, movimento n) {
 			return;
 		}
 	}
-	printf("\n ---->>>>Empilhou: lin = %d, col = %d, mov = %d",n.l,n.c,n.mv);
+	printf("\n ED---->>>>Empilhou: lin = %d, col = %d, mov = %d",n.l,n.c,n.mv);
 	p->v[p -> topo] = n;
 	p->topo++;
+	*tam += 1;
 	return;
 }
 
