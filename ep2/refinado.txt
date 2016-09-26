@@ -1,0 +1,2420 @@
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 1 -1 -1 1 -1 
+0 0 1 -1 -1 0 0 
+0 0 -1 1 1 0 0 
+ Entrou lin = 6
+ Entrou col = 4
+ --->Linhas = 6
+ Entrou m =2
+Achou
+
+ antes mov= 2
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Parte dos ok
+ backtack
+ Voltou
+ ED---->>>>Desempilhou: lin = 5, col = 2, mov = 1
+ --->>>>>>>> tamPilha = 23
+ Fui pro mov = 2
+ --->>>>Col = 4 Lin = 5 
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 1 -1 -1 1 -1 
+0 0 -1 1 1 0 0 
+0 0 -1 1 1 0 0 
+ Entrou lin = 5
+ Entrou col = 4
+ --->Linhas = 5
+ Entrou m =2
+Achou
+
+ antes mov= 2
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 6
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ Pode
+ Saiu do while dos mov
+ Parte dos ok
+ ok
+ Entrou pilha
+ ED---->>>>Empilhou: lin = 4, col = 3, mov = 0
+ --->>>>>>>> m = 0,lin = 0, col = 0
+ --->>>>>>>> tamPilha = 24
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 1 1 -1 1 -1 
+0 0 -1 -1 1 0 0 
+0 0 -1 -1 1 0 0 
+ Entrou lin = 0
+ Entrou col = 0
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 1
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 2
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ Pode
+ Saiu do while dos mov
+ Parte dos ok
+ ok
+ Entrou pilha
+ ED---->>>>Empilhou: lin = 4, col = 4, mov = 3
+ --->>>>>>>> m = 0,lin = 0, col = 0
+ --->>>>>>>> tamPilha = 25
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 -1 1 1 -1 
+0 0 -1 -1 1 0 0 
+0 0 -1 -1 1 0 0 
+ Entrou lin = 0
+ Entrou col = 0
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 1
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 2
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ Pode
+ Saiu do while dos mov
+ Parte dos ok
+ ok
+ Entrou pilha
+ ED---->>>>Empilhou: lin = 4, col = 6, mov = 3
+ --->>>>>>>> m = 0,lin = 0, col = 0
+ --->>>>>>>> tamPilha = 26
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 -1 -1 -1 1 
+0 0 -1 -1 1 0 0 
+0 0 -1 -1 1 0 0 
+ Entrou lin = 0
+ Entrou col = 0
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 1
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 2
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 5
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 6
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ Pode
+ Saiu do while dos mov
+ Parte dos ok
+ ok
+ Entrou pilha
+ ED---->>>>Empilhou: lin = 4, col = 4, mov = 0
+ --->>>>>>>> m = 0,lin = 0, col = 0
+ --->>>>>>>> tamPilha = 27
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 -1 1 -1 1 
+0 0 -1 -1 -1 0 0 
+0 0 -1 -1 -1 0 0 
+ Entrou lin = 0
+ Entrou col = 0
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 1
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 2
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Parte dos ok
+ backtack
+ Voltou
+ ED---->>>>Desempilhou: lin = 4, col = 4, mov = 0
+ --->>>>>>>> tamPilha = 26
+ Fui pro mov = 1
+ --->>>>Col = 4 Lin = 6 
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 -1 -1 -1 1 
+0 0 -1 -1 1 0 0 
+0 0 -1 -1 1 0 0 
+ Entrou lin = 6
+ Entrou col = 4
+ --->Linhas = 6
+ Entrou m =1
+Achou
+
+ antes mov= 1
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Parte dos ok
+ backtack
+ Voltou
+ ED---->>>>Desempilhou: lin = 4, col = 6, mov = 3
+ --->>>>>>>> tamPilha = 25
+ Else: Fui pro mov = 0
+ --->>>>Col = 5 Lin = 4 
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 -1 1 1 -1 
+0 0 -1 -1 1 0 0 
+0 0 -1 -1 1 0 0 
+ Entrou lin = 4
+ Entrou col = 5
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ Pode
+ Saiu do while dos mov
+ Parte dos ok
+ ok
+ Entrou pilha
+ ED---->>>>Empilhou: lin = 4, col = 3, mov = 1
+ --->>>>>>>> m = 0,lin = 0, col = 0
+ --->>>>>>>> tamPilha = 26
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 1 -1 -1 -1 
+0 0 -1 -1 1 0 0 
+0 0 -1 -1 1 0 0 
+ Entrou lin = 0
+ Entrou col = 0
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 1
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 2
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 5
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 6
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ Pode
+ Saiu do while dos mov
+ Parte dos ok
+ ok
+ Entrou pilha
+ ED---->>>>Empilhou: lin = 4, col = 4, mov = 0
+ --->>>>>>>> m = 0,lin = 0, col = 0
+ --->>>>>>>> tamPilha = 27
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 1 1 -1 -1 
+0 0 -1 -1 -1 0 0 
+0 0 -1 -1 -1 0 0 
+ Entrou lin = 0
+ Entrou col = 0
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 1
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 2
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ Pode
+ Saiu do while dos mov
+ Parte dos ok
+ ok
+ Entrou pilha
+ ED---->>>>Empilhou: lin = 4, col = 5, mov = 3
+ --->>>>>>>> m = 0,lin = 0, col = 0
+ --->>>>>>>> tamPilha = 28
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 -1 -1 1 -1 
+0 0 -1 -1 -1 0 0 
+0 0 -1 -1 -1 0 0 
+ Entrou lin = 0
+ Entrou col = 0
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 1
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 2
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Parte dos ok
+ backtack
+ Voltou
+ ED---->>>>Desempilhou: lin = 4, col = 5, mov = 3
+ --->>>>>>>> tamPilha = 27
+ Else: Fui pro mov = 0
+ --->>>>Col = 4 Lin = 4 
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 1 1 -1 -1 
+0 0 -1 -1 -1 0 0 
+0 0 -1 -1 -1 0 0 
+ Entrou lin = 4
+ Entrou col = 4
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ Pode
+ Saiu do while dos mov
+ Parte dos ok
+ ok
+ Entrou pilha
+ ED---->>>>Empilhou: lin = 4, col = 2, mov = 1
+ --->>>>>>>> m = 0,lin = 0, col = 0
+ --->>>>>>>> tamPilha = 28
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 1 -1 -1 -1 -1 
+0 0 -1 -1 -1 0 0 
+0 0 -1 -1 -1 0 0 
+ Entrou lin = 0
+ Entrou col = 0
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 1
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 2
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 2
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 3
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 4
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Parte dos ok
+ backtack
+ Voltou
+ ED---->>>>Desempilhou: lin = 4, col = 2, mov = 1
+ --->>>>>>>> tamPilha = 27
+ Fui pro mov = 2
+ --->>>>Col = 4 Lin = 4 
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 1 1 -1 -1 
+0 0 -1 -1 -1 0 0 
+0 0 -1 -1 -1 0 0 
+ Entrou lin = 4
+ Entrou col = 4
+ --->Linhas = 4
+ Entrou m =2
+Achou
+
+ antes mov= 2
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Parte dos ok
+ backtack
+ Voltou
+ ED---->>>>Desempilhou: lin = 4, col = 4, mov = 0
+ --->>>>>>>> tamPilha = 26
+ Fui pro mov = 1
+ --->>>>Col = 4 Lin = 6 
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 1 -1 -1 -1 
+0 0 -1 -1 1 0 0 
+0 0 -1 -1 1 0 0 
+ Entrou lin = 6
+ Entrou col = 4
+ --->Linhas = 6
+ Entrou m =1
+Achou
+
+ antes mov= 1
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 6
+ Entrou m =0
+ ok == 0
+ Parte dos ok
+ backtack
+ Voltou
+ ED---->>>>Desempilhou: lin = 4, col = 3, mov = 1
+ --->>>>>>>> tamPilha = 25
+ Fui pro mov = 2
+ --->>>>Col = 5 Lin = 4 
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 -1 -1 -1 
+1 -1 -1 -1 1 1 -1 
+0 0 -1 -1 1 0 0 
+0 0 -1 -1 1 0 0 
+ Entrou lin = 4
+ Entrou col = 5
+ --->Linhas = 4
+ Entrou m =2
+Achou
+
+ antes mov= 2
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 4
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 5
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 5
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ Pode
+ Saiu do while dos mov
+ Parte dos ok
+ ok
+ Entrou pilha
+ ED---->>>>Empilhou: lin = 3, col = 4, mov = 0
+ --->>>>>>>> m = 0,lin = 0, col = 0
+ --->>>>>>>> tamPilha = 26
+0 0 -1 -1 -1 0 0 
+0 0 1 -1 -1 0 0 
+-1 -1 -1 -1 -1 -1 1 
+-1 -1 -1 -1 1 -1 -1 
+1 -1 -1 -1 -1 1 -1 
+0 0 -1 -1 -1 0 0 
+0 0 -1 -1 1 0 0 
+ Entrou lin = 0
+ Entrou col = 0
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 0
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
+
+ Entrou col = 0
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 1
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 2
+ --->Linhas = 1
+ Entrou m =0
+Achou
+
+ antes mov= 0
+ mov = 0
+ movimento++
+ mov = 1
+ movimento++
+ mov = 2
+ movimento++
+ mov = 3
+ movimento++
+ Saiu do while dos mov
+ ok == 0
+ Entrou col = 3
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 4
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 5
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+ Entrou col = 6
+ --->Linhas = 1
+ Entrou m =0
+ ok == 0
+Col == 2 -> lin++ col = 0
