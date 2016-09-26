@@ -250,7 +250,7 @@ int main() {
 			if (tab[lin][col] == 1) {
 				printf("\nAchou\n");
 				printf("\n antes mov= %d",m);
-				while (m < 4 && moveu == 0) {
+				while (m <= 3 && moveu == 0) {
 					printf("\n mov = %d",m);
 					if (podeMover(tab,lin,col,m)){
 						printf("\n Pode");
@@ -264,23 +264,19 @@ int main() {
 				}
 				printf("\n Saiu do while dos mov");
 			}
-			/* Se saiu do while de dentro entao ok = 1 ou moveu = 0 */
+			/* Se saiu do while de dentro entao m = 4 ou moveu = 0 */
 			if (ok == 0) {
 				printf("\n ok == 0");
 				m = 0;
-				if (moveu == 0) {
-					printf("\n Entrou no moveu == 0");
-					if (col == 6 && lin <= 5) {
-						printf("\nCol == 6 -> lin++ col = 0\n");
-						lin ++;
-						col = 0;
-					}
-					else col++;
+				/* repetitivo */
+
+				printf("\n Entrou no moveu == 0");
+				if (col == 6 && lin <= 5) {
+					printf("\nCol == 6 -> lin++ col = 0\n");
+					lin ++;
+					col = 0;
 				}
-				else {
-					printf("\nsó col ++");
-					col++;
-				}
+				else col++;
 			}
 			
 		}
