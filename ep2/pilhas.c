@@ -1,6 +1,6 @@
-#include "pilhaMov.h"
-#include <stdio.h>
+#include "pilhas.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 pilha *criaPilha (int n) {
 	pilha *p;
@@ -22,7 +22,7 @@ int pilhaCheia (pilha *p) {
 void desempilha (pilha *p, movimento *mov, int *tam) {
 	movimento auxm;
 	if (pilhaVazia(p)) {
-		printf("\n Erro: Pilha vazia");
+		printf("Impossivel.\n");
 	}
 	else {
 		auxm = p->v[p->topo-1];

@@ -1,9 +1,4 @@
 typedef struct {
-	int lin;
-	int col;
-} pos;
-
-typedef struct {
 	int l;
 	int c;
 	int mv;
