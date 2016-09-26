@@ -290,24 +290,17 @@ int restaUm(int **tab, int lin, int col) {
 				}
 				printf("\n Saiu do while dos mov");
 			}
-			/* Se saiu do while de dentro entao ok = 1 ou moveu = 0 */
-			if (ok == 0) {
+			/* Se saiu do while de dentro entao m = 4 ou moveu = 0 */
+			if (moveu == 0) { /* Entao m = 4*/
 				printf("\n ok == 0");
 				m = 0;
-				if (moveu == 0) {
-					if (c == col-1 && l <= lin-2) {
-						printf("\nCol == 2 -> lin++ col = 0\n");
-						l++;
-						c = 0;
-					}
-					else c++;
+				if (c == col-1 && l <= lin-2) {
+					printf("\nCol == 2 -> lin++ col = 0\n");
+					l++;
+					c = 0;
 				}
-				else {
-					printf("\nsó col ++");
-					c++;
-				}
-			}
-			
+				else c++;
+			}			
 		}
 		printf("\n Parte dos ok");
 		/* Ou ok = 1 ou = 0 */
@@ -360,13 +353,13 @@ int restaUm(int **tab, int lin, int col) {
 					printf("\n Fui pro mov = %d",m);
 				}
 				else { 
+					m = 0;
 					if (c == col-1 && l <= lin-2) {
 						printf("\nCol == 2 -> lin++ col = 0\n");
 						l ++;
 						c = 0;
 					}
 					else c++;
-					m = 0;
 					printf("\n Else: Fui pro mov = %d",m);
 				}
 				printf("\n --->>>>Col = %d Lin = %d ",c,l);
