@@ -9,7 +9,7 @@ int **criaMatriz(int n) {
 	if(matriz != NULL)
 		for (i=0; i<n; i++) {
 			matriz[i] = malloc (n*sizeof(int));
-			if(matriz[i] == NULL) printf("\n n alocou");
+			if(matriz[i] == NULL) printf("\n Falaha ao alocar");
 		}
 	return matriz;
 }
@@ -78,7 +78,6 @@ void pula(int **tab, int *i, int *j, int mov, int n) {
 	else if (mov == 6 ){
 		*i +=2;
 		*j -=1;
-		
 	}
 	else if (mov == 7 ){
 		*i +=1;
