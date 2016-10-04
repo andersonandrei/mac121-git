@@ -1,0 +1,9 @@
+Aparentemente pode ser feito com recursão.
+1) Analiso todas as possibilidades e posso faço fazer sempre a primeira e empilho a escolhida e feita.
+E verifico as próximas geradas consequentemente pelas anteriores.
+Se cheguei em um ponto que acabaram as possibilidades:
+a) Ta ordenado ====> FIM.
+b) Não ta ===> Backtrack.
+Se a pilha esvaziar então acabaram todas as possbilidades de movimentos.
+
+
