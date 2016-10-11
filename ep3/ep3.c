@@ -11,7 +11,6 @@ int main() {
 	int *vetor, *w;
 	int i, j, indice, n, ok, tent = 0;
 	
-	printf("\n Insira o tamanho do vetor: ");
 	scanf("%d",&n);
 	
 	vetor = criaVetor(vetor,n);
@@ -22,13 +21,9 @@ int main() {
 	if(w == NULL) printf("\n Bosta suja");
 	zeraVetor(w,n);
 	
-	printf("\n Insira os valores do vetor: ");
-	
 	for(j=0; j<n; j++) {
 		scanf("%d",&vetor[j]);
 	}
-	
-	printf("\n Insira os valores do vetor ordenado: ");
 	printf("\n");
 	for(j=0; j<n; j++) {
 		scanf("%d",&w[j]);
