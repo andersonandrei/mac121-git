@@ -35,3 +35,7 @@ int topoPilha(pilha *p);
 /* Recebe um ponteiro para um pilha e libera o espaço que foi alocado 
  * para a mesma.*/
 void destroiPilha(pilha *p);
+
+/* Recebe um ponteiro para um pilha e imprime o que está 
+ * nela começando do elemento na posição 0 até o n-1.*/
+void imprimePilhaInversa(pilha *p);

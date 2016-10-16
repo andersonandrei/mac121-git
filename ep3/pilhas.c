@@ -4,10 +4,13 @@
 
 pilha *criaPilha (int n) {
 	pilha *p;
+	int i;
 	p = malloc (sizeof (pilha));
 	p->v = malloc(n * sizeof(int));
 	p->tam = n;
 	p->topo = 0;
+	for(i = 0; i < p->tam; i++)
+		p->v[i] = -1;
 	return p;
 }
 
@@ -42,4 +45,12 @@ void destroiPilha(pilha *p){
 	free(p->v);
 	free(p);
 	return;
+}
+
+void imprimePilhaInversa(pilha *p) {
+	int i;
+	for(i = 0; i < p-> tam; i+=2) {
+		if (p->v[i] != -1)
+			printf("%d\n",p->v[i]);
+	}
 }

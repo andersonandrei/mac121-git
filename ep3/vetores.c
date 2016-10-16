@@ -17,6 +17,7 @@ void zeraVetor (int *v, int n) {
 
 void destroiVetor (int *v) {
 	free(v);
+	return;
 }
 
 void imprimeVetor (int *v, int n) {
