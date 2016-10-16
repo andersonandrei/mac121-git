@@ -1,6 +1,7 @@
 #include "vetores.h"
 
-int *criaVetor(int *v, int n) {
+int *criaVetor(int n) {
+	int *v;
 	v = malloc (n * sizeof(int));
 	if (v != NULL)
 		return v;
@@ -30,6 +31,15 @@ int compara (int *v, int *w, int n) {
 	for (i=0; i < n; i++)
 		if (v[i] != w[i])
 			return 0;
+	return 1;
+}
+
+int checaOrdenado (int *v, int n) {
+	int i;
+	for (i = 0; i < n-1; i++){
+		if (v[i+1] < v[i])
+			return 0;
+	}
 	return 1;
 }
 

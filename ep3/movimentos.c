@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int verificaIndiceTroca (int *v, int i, int n) {
-	int aux, indice = 0;
+	int indice = 0;
 	if(i <= n-3)
 		indice = i+2;
 	if(i > n-2) {
@@ -15,7 +15,7 @@ int verificaIndiceTroca (int *v, int i, int n) {
 }
 
 int verificaIndicePasso (int *v, int i, int n) {
-	int aux, indice = 0;
+	int indice = 0;
 	if(i <= n-2)
 		indice = i+1;
 	if(i == n-1) {
