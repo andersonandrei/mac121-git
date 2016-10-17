@@ -26,7 +26,7 @@ void tresReversao(int *vetor, int n) {
 	int *copia;
 	int i, ok, tent = 0;
 	
-	trocas = criaPilha(2*n);
+	trocas = criaPilha(2*n*n);
 	if (trocas == NULL) printf("Nao e possivel\n");
 	ok = 0;
 	i = 0;
@@ -103,10 +103,14 @@ void tresReversao(int *vetor, int n) {
 	
 	imprimeVetor(vetor, n);
 	printf("\n");
-	
+	printf("\n Aqui;");
 	imprimePilhaInversa(trocas);
-	destroiVetor(vetor);
+	printf("\n Ainda;");
+	
 	destroiPilha(trocas);
+	printf("\n nao bugou;");
+	
+	destroiVetor(vetor);
 
 	return;
 }

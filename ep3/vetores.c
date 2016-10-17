@@ -16,7 +16,9 @@ void zeraVetor (int *v, int n) {
 }
 
 void destroiVetor (int *v) {
+	printf("\n Destroi vetor");
 	free(v);
+	printf("\n Destuiu");
 	return;
 }
 
