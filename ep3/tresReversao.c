@@ -99,9 +99,9 @@ void tresReversao(int *vetor, int n) {
 			}
 		}
 	}
+	
 	imprimePilhaInversa(trocas);
 	destroiPilha(trocas);
 	destroiVetor(vetor);
-
 	return;
 }

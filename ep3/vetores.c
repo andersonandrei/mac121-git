@@ -16,25 +16,15 @@ void zeraVetor (int *v, int n) {
 }
 
 void destroiVetor (int *v) {
-	printf("\n Destroi vetor");
 	free(v);
-	printf("\n Destuiu");
 	return;
 }
 
 void imprimeVetor (int *v, int n) {
 	int i;
-	for (i=0; i < n; i++)
+	for (i = 0; i < n; i++)
 		printf("%d ",v[i]);
 	return ;
-}
-
-int compara (int *v, int *w, int n) {
-	int i;
-	for (i=0; i < n; i++)
-		if (v[i] != w[i])
-			return 0;
-	return 1;
 }
 
 int checaOrdenado (int *v, int n) {

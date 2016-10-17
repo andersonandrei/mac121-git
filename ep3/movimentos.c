@@ -3,12 +3,12 @@
 
 int verificaIndiceTroca (int *v, int i, int n) {
 	int indice = 0;
-	if(i <= n-3)
-		indice = i+2;
-	if(i > n-2) {
-		if (i == n-2)
+	if(i <= n - 3)
+		indice = i + 2;
+	if(i > n - 2) {
+		if (i == n - 2)
 			indice = 0;
-		if (i == n-1)
+		if (i == n - 1)
 			indice = 1;
 	}
 	return indice;	
@@ -16,9 +16,9 @@ int verificaIndiceTroca (int *v, int i, int n) {
 
 int verificaIndicePasso (int *v, int i, int n) {
 	int indice = 0;
-	if(i <= n-2)
-		indice = i+1;
-	if(i == n-1) {
+	if(i <= n - 2)
+		indice = i + 1;
+	if(i == n - 1) {
 		indice = 0;
 	}
 	return indice;	
@@ -40,6 +40,5 @@ void troca (int *v, int i, int n) {
 	aux = v[i];
 	v[i] = v[indice];
 	v[indice] = aux;
-
 	return;
 }

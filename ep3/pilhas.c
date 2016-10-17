@@ -48,9 +48,10 @@ void destroiPilha(pilha *p){
 }
 
 void imprimePilhaInversa(pilha *p) {
-	int i;
-	for(i = 0; i < p-> tam; i+=2) {
+	int i,cont = 0;;
+	for(i = 0; i < p->tam; i += 2) {
 		if (p->v[i] != -1)
-			printf("%d\n",p->v[i]);
+			printf("%d\n", p->v[i]);
+			cont++;
 	}
 }
