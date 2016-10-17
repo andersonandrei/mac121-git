@@ -1,6 +1,7 @@
 #include "pilhas.h"
 #include "movimentos.h"
 #include "vetores.h"
+#include "bubbleSort.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -22,6 +23,7 @@ int main() {
 
 void tresReversao(int *vetor, int n) {
 	pilha *trocas;
+	int *copia;
 	int i, ok, tent = 0;
 	
 	trocas = criaPilha(2*n);
@@ -30,16 +32,34 @@ void tresReversao(int *vetor, int n) {
 	i = 0;
 	
 	/* Caso particular, n=2 */
-	if (n == 2) {
-		if (vetor[0] <= vetor[1]) {
-			imprimeVetor(vetor, n);
-			return;
+	if (n % 2 == 0) {
+		if (n == 2) {
+			if (vetor[0] <= vetor[1]) {
+				imprimeVetor(vetor, n);
+				return;
+			}
+			else {
+				printf("Nao e possivel\n");
+				destroiPilha(trocas);
+				destroiVetor(vetor);
+				return;
+			}
 		}
-		else {
-			printf("Nao e possivel\n");
-			destroiPilha(trocas);
-			destroiVetor(vetor);
-			return;
+		else { /* Verificando com bubbleSort se é possível de ordenar */
+			copia = malloc (n * sizeof(int));
+			if (copia == NULL) 
+				printf("Nao e possivel\n");
+			for (i = 0; i < n; i++)
+				copia[i] = vetor[i];
+			bubbleSort(copia, n);
+			imprimeVetor(copia, n);
+			if (checaOrdenado(copia,n) == 0) {
+				printf("Nao e possivel\n");
+				destroiVetor(copia);
+				destroiVetor(vetor);
+				destroiPilha(trocas);
+				return;
+			}
 		}
 	}
 	
