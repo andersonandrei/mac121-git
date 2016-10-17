@@ -8,6 +8,8 @@ void heapSort(int *v, int n);
 int main() {
 	int n, i;
 	int *v;
+
+	printf("\n %d \n",'andrei');
 	
 	scanf("%d",&n);
 	
@@ -31,9 +33,6 @@ int main() {
 
 void rebaixa (int *v, int n, int i) {
 	int aux, filho;
-	aux = v[0];
-	v[0] = v[n-1];
-	v[n-1] = aux;
 	filho = 2*i + 1;
 	while(filho < n) {
 		if (filho + 1 < n && v[filho] < v[filho+1])
