@@ -9,7 +9,7 @@ void imprimeLista (apontador inicio) {
 	
 	apontador i;
 	int j;
-	printf("\n Lista de palavras: ");
+	printf("\nLista de palavras: \n\n");
 	for (i = inicio; i != NULL ; i = i -> prox) {
 		for (j = 0; i -> info[j] != '\0'; j++){
 			printf ("%c", i -> info[j]);
@@ -21,14 +21,14 @@ void imprimeLista (apontador inicio) {
 
 apontador busca (apontador inicio, char *x) {
 	apontador i;
+	fflush(stdout);
 	for (i = inicio; i != NULL && strcmp(i -> info,x) != 0; i = i -> prox) {}
 	return i;
 }
 
 void insereInicio (apontador *inicio, char *x) {
 	apontador novo, aux, p, ant;
-	int i;
-	novo = malloc (sizeof (celula) );
+	novo = malloc ( sizeof (celula) );
 	novo -> info = malloc (100 * sizeof	(char) );
 	aux = malloc (sizeof (celula) );
 	aux -> info = malloc (100 * sizeof	(char) );
