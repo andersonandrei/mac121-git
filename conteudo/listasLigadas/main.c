@@ -7,11 +7,13 @@ int main () {
 	
 	printf("\n Lista Ligada criada!\n Veja:");
 	imprimeLista (lista);
+	printf("\n 1");
 	insereFinal (&lista, 20);
+	imprimeLista (lista);
 	insereInicio (&lista, 10);
 	insereInicio (&lista, 16);
 	insereFinal (&lista, 20);
-	imprimeLista (lista);
+	printf("\n Dois");
 	imprimeLista (lista);
 		
 	

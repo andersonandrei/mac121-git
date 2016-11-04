@@ -30,17 +30,24 @@ void insereInicio (apontador *inicio, int x) {
 	novo -> info = x;
 	novo -> prox = *(inicio);
 	*(inicio) = novo;
+	return;
 }
 
 void insereFinal (apontador *inicio, int x) {
-	apontador i;
-	i = *(inicio);
-	while (i != NULL) {
-		i = i -> prox;
+	apontador p, ant, novo;
+	p = *inicio;
+	novo = malloc (sizeof (celula) );
+	novo -> info = x;
+	novo -> prox = NULL;
+	while (p != NULL) {
+		ant = p;
+		p = p -> prox;
 	}
-	i = malloc (sizeof (celula) );
-	i -> info = x;
-	i -> prox = NULL;
+	if (*inicio == NULL)
+		*inicio = novo;
+	else 
+		ant -> prox = novo;
+	return;
 }
 
 apontador insereOrdenado (apontador inicio, int x) {

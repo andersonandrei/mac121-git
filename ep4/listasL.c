@@ -52,15 +52,44 @@ void insereInicio (apontador *inicio, char *x) {
 }
 
 void insereFinal (apontador *inicio, char *x) {
-	apontador i;
-	i = *(inicio);
-	while (i != NULL) {
-		i = i -> prox;
+	apontador p, ant, novo, aux;
+	p = *inicio;
+	novo = malloc (sizeof (celula) );
+	novo -> info = malloc (100 * sizeof (char) );
+	
+	aux = malloc (sizeof (celula) );
+	aux -> info = malloc (100 * sizeof (char) );
+	aux -> prox = NULL;
+	aux = busca (*inicio, x);
+	if (aux != NULL) {
+		(aux -> qnt)++;
 	}
-	i = malloc (sizeof (celula) );
-	i -> info = malloc (100 * sizeof (celula) );
-	strcpy(i -> info, x);
-	i -> prox = NULL;
+	else {
+		strcpy(novo -> info, x);
+		novo -> qnt = 1;
+		p = *inicio;
+		ant = NULL;
+		while (p != NULL && ordemAlfabetica(p, novo) == 0) {
+			ant = p;
+			p = p -> prox;
+		}
+		if (ant == NULL) *inicio = novo;
+		else ant -> prox = novo;
+		novo -> prox = p;
+	}
+	
+	/*
+	}
+	while (p != NULL) {
+		ant = p;
+		p = p -> prox;
+	}
+	if (*inicio == NULL)
+		*inicio = novo;
+	else 
+		ant -> prox = novo;
+	return;
+	*/
 }
 
 apontador insereOrdenado (apontador inicio, char *x) {
