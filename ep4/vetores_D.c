@@ -1,40 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <strings.h>
 #include <ctype.h>
 #include "listasL.h"
 #include "palavras.h"
+#include "vetores.h"
 
 int main () {
-	apontador lista, palavras;
-	int i;
+	int i, n = 0;
+	char *vetor;
+	int *freq;
 	
 	FILE *texto;
-	char *palavra;
 	char *arq;
 	char ch;
-
-	lista = malloc (sizeof (celula) );
-	lista -> info = malloc(100* sizeof (char) );
-	lista -> prox = NULL;
-	lista -> qnt = 0;
-
-	fflush(stdout);
-	palavras = malloc (sizeof(celula));
-	palavras -> info = malloc(100* sizeof (char) );
-	palavras -> prox = NULL;
-	palavras -> qnt = 0;
+	char *palavra;
 	
 	palavra = malloc (100 * sizeof(char));
-
+	vetor = malloc (100 * sizeof (char));
+	if (vetor == NULL) printf("\n Não alocou vetor");
+	freq = malloc (100 * sizeof (int) );
+	if (freq == NULL) printf("\n Não alocou freq");
 	arq = malloc (100 * sizeof(char));
 	arq = "livro2.txt";
 
 	texto = fopen(arq, "r");
+	printf("\n Li o texto");
 	if(texto == NULL) printf("Erro, nao foi possivel abrir o arquivo\n");
 	else {
+		printf("\n Else");
 		i = 0;
-		while( (ch=fgetc (texto) ) != EOF ){
+		while( (ch = fgetc (texto) ) != EOF ){
+			printf("\n While");
 			if((ch >= 97 && ch <= 122)) {
 				palavra[i] = ch;
 				i++;
@@ -44,21 +41,21 @@ int main () {
 				i++;
 			}
 			if(especial	(ch))  { /* 60 = ' e 9 = tab */
-				insereFinal(&palavras, palavra);
+				printf("\n Vai inserir");
+				fflush(stdout);
+				insereVetor (&vetor, freq, n, palavra);
 				limpaPalavra(palavra, i);
 				i = 0;
+				n ++;
 			}
 		}
 		printf("\n pos no final");
-		insereFinal(&palavras, palavra);
+		insereVetor (&vetor, freq, n, palavra);
 		limpaPalavra(palavra, i);
 	}  
-	imprimeLista(palavras);
 	
 	fclose(texto);
 
+	
 	return 0;
-
 }
-
-
