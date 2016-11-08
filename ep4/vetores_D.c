@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
+#include <string.h>
 #include <ctype.h>
 #include "listasL.h"
 #include "palavras.h"
 #include "vetores.h"
 
 int main () {
-	int i, n = 0;
+	int i, n = 0, k;
 	char *vetor;
 	int *freq;
 	
@@ -31,6 +31,7 @@ int main () {
 		printf("\n Else");
 		i = 0;
 		while( (ch = fgetc (texto) ) != EOF ){
+			printf("\n na mao: %c\n",ch);
 			printf("\n While");
 			if((ch >= 97 && ch <= 122)) {
 				palavra[i] = ch;
@@ -40,13 +41,16 @@ int main () {
 				palavra[i] = tolower(ch);
 				i++;
 			}
-			if(especial	(ch))  { /* 60 = ' e 9 = tab */
+			if(especial	(ch) == 1)  { /* 60 = ' e 9 = tab */
 				printf("\n Vai inserir");
 				fflush(stdout);
+				printf("\n Vamos olhar pra palavra: de tamanho %d\n",i);
+				for (k=0;k<i; k++) printf("%c",palavra[k]);
+				printf("\n");
 				insereVetor (&vetor, freq, n, palavra);
 				limpaPalavra(palavra, i);
 				i = 0;
-				n ++;
+				n++;
 			}
 		}
 		printf("\n pos no final");

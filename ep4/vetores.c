@@ -19,9 +19,10 @@ void zeraVetorInt (int *v, int n) {
 }
 
 void zeraVetorChar (char **v, int n) {
-	int i;
+	int i, j;
 	for (i = 0; i < n; i++)
-		v[i] = NULL;
+		for (j = 0; j < n; j++)
+			v[i][j] = NULL;
 	return;
 }
 
@@ -47,8 +48,12 @@ int checaOrdenado (int *v, int n) {
 }
 
 int buscaElemento (char **v, int n, char *palavra) {
-	int i;
+	int i, k;
+	printf("\n Entrou pra busca de tamanho %d",n);
+	fflush(stdout);
+	for (k=0;k<n; k++) { printf("%c",palavra[k]); fflush(stdout);}
 	for (i = 0; i < n; i++) {
+		printf(" \n no for");
 		if (strcmp(v[i], palavra) == 0)
 			return i ;
 	}
@@ -58,18 +63,24 @@ int buscaElemento (char **v, int n, char *palavra) {
 int insereVetor (char **v, int *w, int n, char *ch) {
 	
 	char **aux;
-	int *aux2, i, pos = -1;
-	printf("\n Entrou");
+	int *aux2, i, pos = -1, k, j;
+	printf("\n Insere vetor:  Entrou com \n");
 	fflush(stdout);
 	aux = malloc (n+1 * sizeof (char *) );
-	for (i=0; i<n+1; i++) {
-		aux[i] = malloc (n+1 * sizeof (char) );
+	for (k=0;k<strlen(ch); k++) printf("%c",ch[k]);
+	for (i=0; i<n+2; i++) {
+		aux[i] = malloc ((n+1) * sizeof (char) );
 	}
+	
+	zeraVetorChar(v, n+1);
 	printf("\n Mallocou aux");
 	fflush(stdout);
 	aux2 = malloc (n+1 * sizeof (int) );
 	printf("\n Mallocou aux2");
 	fflush(stdout);
+	printf("\n Mandou pra busca de tamanho %d",n);
+	fflush(stdout);
+	for (k=0;k<n; k++) { printf("%c",ch[k]); fflush(stdout);}
 	pos = buscaElemento (v, n, ch);
 	printf("\n pos");
 	fflush(stdout);
@@ -89,8 +100,11 @@ int insereVetor (char **v, int *w, int n, char *ch) {
 	for (i = 0 ; i < strlen(ch); i++) {
 		printf("\n copiou, %d", i);
 		fflush(stdout);
+		printf("\n Olhemos para, %c", aux[n][i] );
+		fflush(stdout);
 		aux[n][i] = ch[i];
-	
+		printf("\n mexeu com, %d, %d", n, i);
+		fflush(stdout);
 	}
 	
 	printf("\n Copiou");
@@ -98,7 +112,18 @@ int insereVetor (char **v, int *w, int n, char *ch) {
 	aux2[n] = 1;
 	printf("\n freq");
 	fflush(stdout);
-	free (v);
+	for (i = 0; i < n-1; i++){
+		for (j = 0; j< n-1; j++)
+			free(v[i][j]);
+	}
+	free(v);
+	v = malloc (n+1 * sizeof (char *) );
+	for (i=0; i<n+2; i++) {
+		v[i] = malloc ((n+1) * sizeof (char) );
+	}
+	
+	printf("\n Liberou");
+	fflush(stdout);
 	v = aux;
 	return n+1;
 }
