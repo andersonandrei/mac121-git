@@ -18,11 +18,20 @@ void zeraVetorInt (int *v, int n) {
 	return;
 }
 
-void zeraVetorChar (char **v, int n) {
+void zeraMatrizChar (char **v, int n) {
 	int i, j;
-	for (i = 0; i < n; i++)
-		for (j = 0; j < n; j++)
+	for (i = 0; i < n; i++){
+		for (j = 0; j < n; j++){
 			v[i][j] = NULL;
+		}
+	}
+	return;
+}
+
+void zeraVetorChar (char *v, int n) {
+	int i;
+	for (i = 0; i < n; i++)
+			v[i] = NULL;
 	return;
 }
 
@@ -47,56 +56,91 @@ int checaOrdenado (int *v, int n) {
 	return 1;
 }
 
+void destroiMatriz(char **tab, int n){
+	int i;
+	for(i=0;i < n;i++)
+		free(tab[i]);
+	free(tab);
+	return;
+}
+
 int buscaElemento (char **v, int n, char *palavra) {
 	int i, k;
 	printf("\n Entrou pra busca de tamanho %d",n);
 	fflush(stdout);
-	for (k=0;k<n; k++) { printf("%c",palavra[k]); fflush(stdout);}
-	for (i = 0; i < n; i++) {
-		printf(" \n no for");
-		if (strcmp(v[i], palavra) == 0)
-			return i ;
+	for (k=0; k<strlen(palavra); k++) { printf("%c",palavra[k]); fflush(stdout);}
+	
+	for (i = 0; i<n; i++) {
+		printf("\n Posição %d",i);
+		for (k=0; k < strlen(v[i]); k++)
+			printf("%c",v[i][k]);
+		printf("\n");
 	}
-	return -1;
+	
+	
+	for (i = 0; i < n && strcmp(v[i], palavra) != 0; i++) {}
+	printf("\n Saiu do for, qual é %d e %d ",i,n);
+	fflush(stdout);
+	if ( i >=n ) return -1;
+	return 0;
 }
 
-int insereVetor (char **v, int *w, int n, char *ch) {
+char ** insereVetor (char **v, int *w, int n, char *ch) {
 	
 	char **aux;
 	int *aux2, i, pos = -1, k, j;
+	
 	printf("\n Insere vetor:  Entrou com \n");
 	fflush(stdout);
-	aux = malloc (n+1 * sizeof (char *) );
+	
 	for (k=0;k<strlen(ch); k++) printf("%c",ch[k]);
-	for (i=0; i<n+2; i++) {
-		aux[i] = malloc ((n+1) * sizeof (char) );
+	
+	printf("\n Vai começar a alocar");
+	fflush(stdout);
+	
+	aux = malloc (100 * sizeof (char *));
+	for (i = 0; i < 100; i++) {
+		aux[i] = malloc (100 * sizeof (char));
+		if (aux[i] == NULL) printf("\n Nao alocou minis");
 	}
 	
-	zeraVetorChar(v, n+1);
+	
+
+	
 	printf("\n Mallocou aux");
 	fflush(stdout);
+	
 	aux2 = malloc (n+1 * sizeof (int) );
 	printf("\n Mallocou aux2");
 	fflush(stdout);
+	
 	printf("\n Mandou pra busca de tamanho %d",n);
 	fflush(stdout);
-	for (k=0;k<n; k++) { printf("%c",ch[k]); fflush(stdout);}
+	
+	for (k=0;k<strlen(ch); k++) { printf("%c",ch[k]); fflush(stdout);}
+	
 	pos = buscaElemento (v, n, ch);
 	printf("\n pos");
 	fflush(stdout);
+	
 	if (pos >= 0) {
 		printf("\n ifou");
 		fflush(stdout);
 		w[pos] ++;
-		return pos;
+		return v;
 	}
 	
 	printf("\n saiu");
 	fflush(stdout);
+
+	zeraMatrizChar (aux, n+1);
+	printf("\n zerou matriz");
+	fflush(stdout);
 	
-	zeraVetorChar (aux, n+1);
+	zeraVetorInt(aux2, n+1);
 	printf("\n zerou");
 	fflush(stdout);
+	/*
 	for (i = 0 ; i < strlen(ch); i++) {
 		printf("\n copiou, %d", i);
 		fflush(stdout);
@@ -106,18 +150,26 @@ int insereVetor (char **v, int *w, int n, char *ch) {
 		printf("\n mexeu com, %d, %d", n, i);
 		fflush(stdout);
 	}
-	
+	*/
+	strcpy (aux[n],ch);
 	printf("\n Copiou");
 	fflush(stdout);
+	
 	aux2[n] = 1;
 	printf("\n freq");
 	fflush(stdout);
-	for (i = 0; i < n-1; i++){
-		for (j = 0; j< n-1; j++)
-			free(v[i][j]);
-	}
-	free(v);
-	v = malloc (n+1 * sizeof (char *) );
+	
+	free(w);
+	w = malloc (n+1 * sizeof (int) );
+	w = aux2;
+	
+	/*
+	destroiMatriz (v, n);
+	
+	printf("\n Destruiu");
+	fflush(stdout);
+	
+	v = malloc ((n+1) * sizeof (char *) );
 	for (i=0; i<n+2; i++) {
 		v[i] = malloc ((n+1) * sizeof (char) );
 	}
@@ -125,7 +177,9 @@ int insereVetor (char **v, int *w, int n, char *ch) {
 	printf("\n Liberou");
 	fflush(stdout);
 	v = aux;
-	return n+1;
+	
+	*/
+	return aux ;
 }
 
 int ordemAlfabeticaVetores (char *a, char *b) {

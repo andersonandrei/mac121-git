@@ -3,9 +3,13 @@ int *criaVetor(int n);
 
 void zeraVetorInt (int *v, int n);
 
-void zeraVetorChar (char **v, int n);
+void zeraVetorChar (char *v, int n);
+
+void zeraMatrizChar (char **v, int n);
 
 void destroiVetor (int *v) ;
+
+void destroiMatriz(char **tab, int n) ;
 
 void imprimeVetor (int *v, int n);
 
@@ -13,7 +17,7 @@ int checaOrdenado (int *v, int n);
 
 int buscaElemento (char **v, int n, char *palavra);
 
-int insereVetor (char **v, int *w, int n, char *ch);
+char ** insereVetor (char **v, int *w, int n, char *ch);
 
 int ordemAlfabeticaVetores (char *a, char *b);
 
