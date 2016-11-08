@@ -7,61 +7,31 @@
 #include "vetores.h"
 
 int main () {
-	int i, n = 0, k, j;
-	char **vetor;
+
+	FILE *texto;
+	char *arq, ch, *palavra;
+	char **tab;
 	int *freq;
 	
-	FILE *texto;
-	char *arq;
-	char ch;
-	char *palavra;
-	
-	printf("\n Caralho");
-	fflush(stdout);
+	int i, n = 0;
 	
 	arq = malloc (100 * sizeof(char));
 	arq = "livro2.txt";
-
-	printf("\n Alocou as porras");
-	fflush(stdout);
-	
-	
-	
 	texto = fopen(arq, "r");
-	printf("\n Li o texto");
-	fflush(stdout);
-
-
-	palavra = malloc (100 * sizeof(char));
-	vetor = malloc (1000 * sizeof (char *));
-	for (i = 0; i < 1000; i++) {
-		vetor[i] = malloc (1000 * sizeof (char));
-		if (vetor[i] == NULL) printf("\n Nao alocou minis");
-	}
-	if (vetor == NULL) printf("\n Não alocou vetor");
-	freq = malloc (10000 * sizeof (int) );
-	if (freq == NULL) printf("\n Não alocou freq");
-
-	zeraMatrizChar (vetor, 1000);
-	printf("\n Zerou as porras 1 ");
-	fflush(stdout);
 	
-	zeraVetorChar (palavra, 100);
-	printf("\n Zerou as porras 2 ");
-	fflush(stdout);
+	palavra = malloc (100 * sizeof(char));
+	
+	tab = criaMatriz (1000);
+	freq = criaVetor (1000);
+	
+	zeraMatriz (tab, 1000);
 	zeraVetorInt (freq, 1000);
-
-	printf("\n Zerou as porras 3 ");
-	fflush(stdout);
-
-
-	if(texto == NULL) printf("Erro, nao foi possivel abrir o arquivo\n");
+	
+	if(texto == NULL)
+		printf("Erro, nao foi possivel abrir o arquivo\n");
 	else {
-		printf("\n Else");
 		i = 0;
 		while( (ch = fgetc (texto) ) != EOF ){
-			printf("\n na mao: %c\n",ch);
-			printf("\n While");
 			if((ch >= 97 && ch <= 122)) {
 				palavra[i] = ch;
 				i++;
@@ -71,24 +41,15 @@ int main () {
 				i++;
 			}
 			if(especial	(ch) == 1)  { /* 60 = ' e 9 = tab */
-				printf("\n Vai inserir");
-				fflush(stdout);
-				printf("\n Vamos olhar pra palavra: de tamanho %d\n",i);
-				for (k=0;k<i; k++) printf("%c",palavra[k]);
-				printf("\n");
-				vetor = insereVetor (vetor, freq, n, palavra);
+				insereVetor (tab, freq, n, palavra);
 				limpaPalavra(palavra, i);
 				i = 0;
 				n++;
 			}
 		}
-		printf("\n pos no final");
-		vetor = insereVetor (vetor, freq, n, palavra);
+		insereVetor (tab, freq, n, palavra);
 		limpaPalavra(palavra, i);
-	}  
-	
-	fclose(texto);
-
+	}
 	
 	return 0;
 }
