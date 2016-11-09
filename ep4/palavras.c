@@ -6,8 +6,6 @@ void limpaPalavra (char *palavra, int n) {
 	int i;
 	for (i = 0; i < n; i++)
 		palavra[i] = ' ';
-	free(palavra);
-	palavra = malloc (100 * sizeof (char));
 	return;
 }
 

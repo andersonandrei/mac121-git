@@ -27,7 +27,7 @@ void zeraMatriz(char **tab, int n) {
 	int i,j;
 	for(i=0; i< n; i++){
 		for(j=0; j< n; j++){
-			tab[i][j] = 0;
+			tab[i][j] = ' ';
 		}
 	}
 	return;
@@ -99,16 +99,18 @@ void destroiMatriz(char **tab, int n){
 
 int buscaElemento (char **v, int n, char *palavra) {
 	int i, k;
-	for (k=0; k<strlen(palavra); k++) { printf("%c",palavra[k]); fflush(stdout);}
 	for (i = 0; i < n && strcmp(v[i], palavra) != 0; i++) {}
 	if ( i >= n ) return -1;
 	return i;
 }
 
-void insereVetor (char **v, int *w, int n, char *ch) {
+char ** insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 	char **aux;
 	int *aux2;
-	int i, j, k, busca;
+	int i, j, k, busca, indiceL = 0, indiceC = 0;
+	
+	for (k = 0; k < tamP; k++) { printf("\n Entrooou ----- >:"); printf("%c",ch[k]);}
+	
 	aux = criaMatriz (n+1);
 	aux2 = criaVetor (n+1);
 	
@@ -117,26 +119,33 @@ void insereVetor (char **v, int *w, int n, char *ch) {
 	
 	busca = buscaElemento (aux, n, ch);
 	if (busca > 0) {
-		w[busca] ++;
-		return;
+		w[busca]++;
+		return v;
 	}
 	else {
-		for (i = 0; i < n; i++) {
-			strcpy(aux[i], v[i]);
-			aux2[i] = w[i];
+		for (i = 0; i < n && v[i][0] != ' '; i++) {
+			printf("\n Entrou na lin");
+			for (j = 0; j< n && v[i][j] != ' '; j++) {
+				printf("\n Entrou na col");
+				aux[i][j] = v[i][j];
+			}
 		}
-		strcpy(aux[n],ch);
-		aux2[n] = 1;
+		indiceL = i;
+		
+		for (i = 0; i < tamP; i++)
+			aux[indiceL][i] = ch[i];
+		
+		for (i = 0; i < indiceL; i++)
+			aux2[i] = w[i];
+			
+		aux2[indiceL+1] = 1;
 		
 		
-		v = criaMatriz(n+1);
-		v = aux;
-		imprimeMatriz (v, n+1);
-		w = criaVetor(n+1);
-		w = aux2;
 	}
 	
-	return;
+	
+	
+	return aux;
 }
 
 void imprimeVetorFreq (char **v, int *w, int n) {
@@ -151,8 +160,6 @@ void imprimeVetorFreq (char **v, int *w, int n) {
 	return;
 
 }
-
-
 
 int ordemAlfabeticaVetores (char *a, char *b) {
 	/* Retorna 0 se o certo for o primeiro e 1 c.contrario */
@@ -178,7 +185,7 @@ insereOrdenadoVetor (char **v, int *w, int n, char *ch) {
 			i++;
 		}
 		if (i >= n ) {
-			insereVetor (v, w, n, ch);
+			insereVetor (v, w, n, ch, i);
 		}
 		else {
 			aux = malloc (n+1 * sizeof (char) );

@@ -25,7 +25,7 @@ int checaOrdenado (int *v, int n);
 
 int buscaElemento (char **v, int n, char *palavra);
 
-void insereVetor (char **v, int *w, int n, char *ch);
+char ** insereVetor (char **v, int *w, int n, char *ch, int tamP);
 
 int ordemAlfabeticaVetores (char *a, char *b);
 

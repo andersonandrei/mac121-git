@@ -13,7 +13,7 @@ int main () {
 	char **tab;
 	int *freq;
 	
-	int i, n = 0;
+	int i, n = 0, k;
 	
 	arq = malloc (100 * sizeof(char));
 	arq = "livro2.txt";
@@ -41,13 +41,15 @@ int main () {
 				i++;
 			}
 			if(especial	(ch) == 1)  { /* 60 = ' e 9 = tab */
-				insereVetor (tab, freq, n, palavra);
+				printf("\n Mandou inserir: \n");
+				for (k = 0; k < n; k++) { printf("%c",palavra[k]);}
+				insereVetor (tab, freq, n, palavra, i);
 				limpaPalavra(palavra, i);
 				i = 0;
 				n++;
 			}
 		}
-		insereVetor (tab, freq, n, palavra);
+		insereVetor (tab, freq, n, palavra, i);
 		limpaPalavra(palavra, i);
 	}
 	
