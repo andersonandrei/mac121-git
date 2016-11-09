@@ -35,6 +35,7 @@ void zeraMatriz(char **tab, int n) {
 
 void imprimeMatriz(char **tab, int n) {
 	int i,j;
+	printf("\n Olha matriz \n");
 	for (i=0; i<n; i++) {
 		printf("\n");
 		for(j=0; j<n; j++) {
@@ -104,46 +105,29 @@ int buscaElemento (char **v, int n, char *palavra) {
 	return i;
 }
 
-char ** insereVetor (char **v, int *w, int n, char *ch, int tamP) {
-	char **aux;
-	int *aux2;
-	int i, j, k, busca, indiceL = 0, indiceC = 0;
+int insereVetor (char **v, int *w, int n, char *ch, int tamP) {
+	int i, j, lin, col, k;
+	int busca;
 	
-	for (k = 0; k < tamP; k++) { printf("\n Entrooou ----- >:"); printf("%c",ch[k]);}
+	busca = buscaElemento (v, n, ch);
 	
-	aux = criaMatriz (n+1);
-	aux2 = criaVetor (n+1);
-	
-	zeraMatriz(aux, n+1);
-	zeraVetorInt(aux2, n+1);
-	
-	busca = buscaElemento (aux, n, ch);
-	if (busca > 0) {
+	if (busca >= 0) {
 		w[busca]++;
-		return v;
+		return n;
 	}
-	else {
-		for (i = 0; i < n && v[i][0] != ' '; i++) {
-			printf("\n Entrou na lin");
-			for (j = 0; j< n && v[i][j] != ' '; j++) {
-				printf("\n Entrou na col");
-				aux[i][j] = v[i][j];
-			}
+
+	for (i = 0; i < n && v[i][0] != ' '; i++) {}
+	
+	lin = i;
+	
+	for (i = lin; i < n; i++) {
+		for (j = 0; j < tamP; j++) {
+			v[i][j] = ch[j];
 		}
-		indiceL = i;
-		
-		for (i = indiceL; i < tamP; i++)
-			aux[indiceL][i] = ch[i];
-		
-		for (i = 0; i < indiceL; i++)
-			aux2[i] = w[i];
-			
-		aux2[indiceL+1] = 1;
 	}
 	
+	return n;
 	
-	
-	return aux;
 }
 
 void imprimeVetorFreq (char **v, int *w, int n) {
@@ -156,7 +140,6 @@ void imprimeVetorFreq (char **v, int *w, int n) {
 		printf(" : %d", w[i]);
 	}
 	return;
-
 }
 
 int ordemAlfabeticaVetores (char *a, char *b) {
@@ -167,9 +150,9 @@ int ordemAlfabeticaVetores (char *a, char *b) {
 	return 0;
 }
 
-insereOrdenadoVetor (char **v, int *w, int n, char *ch) {
-	char **aux, i;
-	int *aux2, j, pos;
+int insereOrdenadoVetor (char **v, int *w, int n, char *ch) {
+	char **aux;
+	int *aux2, i, j, pos;
 	aux2 = malloc (n+1 * sizeof( int ) );
 	
 	pos = buscaElemento (v, n, ch);

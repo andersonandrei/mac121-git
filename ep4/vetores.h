@@ -5,7 +5,7 @@ char **criaMatriz (int n);
 
 void zeraMatriz(char **tab, int n);
 
-void imprimeMatriz(char **tab, int nl);
+void imprimeMatriz(char **tab, int n);
 
 void imprimeVetorFreq (char **v, int *w, int n);
 
@@ -25,7 +25,7 @@ int checaOrdenado (int *v, int n);
 
 int buscaElemento (char **v, int n, char *palavra);
 
-char ** insereVetor (char **v, int *w, int n, char *ch, int tamP);
+int insereVetor (char **v, int *w, int n, char *ch, int tamP);
 
 int ordemAlfabeticaVetores (char *a, char *b);
 

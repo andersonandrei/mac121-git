@@ -13,19 +13,20 @@ int main () {
 	char **tab;
 	int *freq;
 	
-	int i, n = 0, k;
-	
+	int i, j, n = 0, k;
+	printf("\n Caralho");
+	fflush(stdout);
 	arq = malloc (100 * sizeof(char));
 	arq = "livro2.txt";
 	texto = fopen(arq, "r");
 	
 	palavra = malloc (100 * sizeof(char));
 	
-	tab = criaMatriz (10000);
-	freq = criaVetor (10000);
+	tab = criaMatriz (1000);
+	freq = criaVetor (1000);
 	
-	zeraMatriz (tab, 10000);
-	zeraVetorInt (freq, 10000);
+	zeraMatriz (tab, 1000);
+	zeraVetorInt (freq, 1000);
 	
 	if(texto == NULL)
 		printf("Erro, nao foi possivel abrir o arquivo\n");
@@ -42,18 +43,23 @@ int main () {
 			}
 			if(especial	(ch) == 1)  { /* 60 = ' e 9 = tab */
 				printf("\n Mandou inserir: \n");
-				for (k = 0; k < n; k++) { printf("%c",palavra[k]);}
-				tab = insereVetor (tab, freq, n, palavra, i);
-				imprimeMatriz(tab, n);
+				fflush(stdout);
+				for (k = 0; k < i; k++) { printf("%c",palavra[k]);}
+				n = insereVetor (tab, freq, n, palavra, i);
+				printf("\n ------------------------ ");
+				
+				printf("\n ------------------------ ");
 				limpaPalavra(palavra, i);
 				i = 0;
 				n++;
 			}
 		}
-		tab = insereVetor (tab, freq, n, palavra, i);
+		n = insereVetor (tab, freq, n, palavra, i);
 		limpaPalavra(palavra, i);
 		
 	}
+	
+	imprimeVetorFreq(tab,freq,n);
 	
 	return 0;
 }
