@@ -132,15 +132,13 @@ char ** insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 		}
 		indiceL = i;
 		
-		for (i = 0; i < tamP; i++)
+		for (i = indiceL; i < tamP; i++)
 			aux[indiceL][i] = ch[i];
 		
 		for (i = 0; i < indiceL; i++)
 			aux2[i] = w[i];
 			
 		aux2[indiceL+1] = 1;
-		
-		
 	}
 	
 	
