@@ -37,11 +37,12 @@ void imprimeMatriz(char **tab, int n) {
 	int i,j;
 	printf("\n Olha matriz \n");
 	for (i=0; i<n; i++) {
-		printf("\n");
-		for(j=0; j<n; j++) {
+		for(j=0; j<20; j++) {
 			printf("%c",tab[i][j]);
 		}
+		printf("\n");
 	}
+	printf("\n------");
 	return;
 }
 
@@ -98,44 +99,69 @@ void destroiMatriz(char **tab, int n){
 	return;
 }
 
-int buscaElemento (char **v, int n, char *palavra) {
-	int i, k;
-	for (i = 0; i < n && strcmp(v[i], palavra) != 0; i++) {
-		printf("\n Comparando, no ind = %d, com:",i);
-		for (k = 0; k < 9; k++) { printf("%c",v[i][k]);}
-		printf("com -=-----");
-		for (k = 0; k < 9; k++) { printf("%c",palavra[k]);}
-		printf("\n Resultado da comparação : %d", strcmp(v[i], palavra));
+int comparaPalavras (char *p1, int tamP1, char *p2, int tamP2) {
+	int i ;
+	
+	if (tamP1 != tamP2)
+		return -1;
+	
+	for(i = 0; i < tamP1; i++) {
+		if (p1[i] != p2[i])
+			return -1;
 	}
-	printf("\n Saiu com i = %d",i);
-	if ( i >= n ) return -1;
-	return i;
+	return 0;
 }
 
-int insereVetor (char **v, int *w, int n, char *ch, int tamP) {
+int buscaElemento (char **v, int n, char *palavra, int tamP) {
+	int i, k, j, tamAux;
+	char *auxP, *copia;
+	auxP = malloc (100 * sizeof(char));
+	imprimeMatriz(v, n);
+	for (i = 0; i < n; i++) {
+		for (j = 0 ; j < 20 && v[i][j] != ' '; j++) {
+			auxP[j] = v[i][j];
+		}
+		tamAux = j;
+		
+		printf("\n Comparando ");
+		for (k = 0; k < tamAux; k++) { printf("%c", auxP[k]);}
+		printf(" com ------ ");
+		for (k = 0; k < tamP; k++) { printf("%c",palavra[k]);}
+		printf(" Resultado da comparação : %d", strcmp (auxP, palavra));
+		
+		if (comparaPalavras (auxP, tamAux, palavra, tamP) == 0)
+			return i;
+	}
+	return -1;
+}
+
+void insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 	int i, j, lin, col, k;
 	int busca;
 	
-	busca = buscaElemento (v, n, ch);
+	busca = buscaElemento (v, n, ch, tamP);
 	printf("\n Buscou : %d",busca);
-	
-	if (busca >= 0) {
-		w[busca]++;
-		return n;
-	}
-
-	for (i = 0; i < n && v[i][0] != ' '; i++) {}
-	
-	lin = i;
-	
-	for (i = lin; i < n; i++) {
+	if (n == 0) {
 		for (j = 0; j < tamP; j++) {
-			v[i][j] = ch[j];
-			w[i] = 1;
+			v[0][j] = ch[j];
+			w[0] = 1;
 		}
 	}
+	if (busca >= 0) {
+		printf("\n Somou");
+		w[busca]++;
+		return ;
+	}
+	for (i = 0; i < n && v[i][0] != ' '; i++) {}
+	lin = i;
 	
-	return n;
+	for (j = 0; j < tamP; j++) {
+		v[lin][j] = ch[j];
+		w[lin] = 1;
+	}
+
+	
+	return;
 	
 }
 
@@ -164,7 +190,7 @@ int insereOrdenadoVetor (char **v, int *w, int n, char *ch) {
 	int *aux2, i, j, pos;
 	aux2 = malloc (n+1 * sizeof( int ) );
 	
-	pos = buscaElemento (v, n, ch);
+	pos = buscaElemento (v, n, ch, n);
 	if (pos >= 0) {
 		w[pos] ++;
 		return pos;

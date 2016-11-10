@@ -23,9 +23,11 @@ void imprimeVetor (int *v, int n);
 
 int checaOrdenado (int *v, int n);
 
-int buscaElemento (char **v, int n, char *palavra);
+int comparaPalavras (char *p1, int tamP1, char *p2, int tamP2);
 
-int insereVetor (char **v, int *w, int n, char *ch, int tamP);
+int buscaElemento (char **v, int n, char *palavra, int tamP);
+
+void insereVetor (char **v, int *w, int n, char *ch, int tamP);
 
 int ordemAlfabeticaVetores (char *a, char *b);
 

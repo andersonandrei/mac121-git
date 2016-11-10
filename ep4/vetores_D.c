@@ -11,7 +11,7 @@ int main () {
 	FILE *texto;
 	char *arq, ch, *palavra;
 	char **tab;
-	int *freq;
+	int *freq, soma = 0;
 	
 	int i, j, n = 0, k;
 	printf("\n Caralho");
@@ -45,7 +45,7 @@ int main () {
 				printf("\n Mandou inserir: \n");
 				fflush(stdout);
 				for (k = 0; k < i; k++) { printf("%c",palavra[k]);}
-				n = insereVetor (tab, freq, n, palavra, i);
+				insereVetor (tab, freq, n, palavra, i);
 				printf("\n ------------------------ ");
 				
 				printf("\n ------------------------ ");
@@ -54,12 +54,15 @@ int main () {
 				n++;
 			}
 		}
-		n = insereVetor (tab, freq, n, palavra, i);
+		insereVetor (tab, freq, n, palavra, i);
 		limpaPalavra(palavra, i);
 		
 	}
-	
+	printf("\n -----------------------------------------");
 	imprimeVetorFreq(tab,freq,n);
+	for (i = 0; i < n; i++)
+		soma+=freq[i];
+	printf("\n Totoal de palavras: %d",soma);
 	
 	return 0;
 }
