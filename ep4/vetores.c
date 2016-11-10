@@ -23,6 +23,29 @@ char **criaMatriz (int n) {
 	return matriz;
 }
 
+char ** redimensionaMatriz(char **tab, int n) {
+	int i , j;
+	char **novo;
+	novo = criaMatriz(n+1);
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < n; j++)
+			novo[i][j] = tab[i][j];
+	}
+	destroiMatriz(tab,n);
+	return novo;
+}
+
+int * redimensionaVetor(int *vetor, int n) {
+	int i , j;
+	int *novo;
+	novo = criaVetor((n+1));
+	for (i = 0; i < n; i++) {
+		novo[i] = vetor[i];
+	}
+	destroiVetor(vetor);
+	return novo;
+}
+
 void zeraMatriz(char **tab, int n) {
 	int i,j;
 	for(i=0; i< n; i++){
@@ -35,14 +58,12 @@ void zeraMatriz(char **tab, int n) {
 
 void imprimeMatriz(char **tab, int n) {
 	int i,j;
-	printf("\n Olha matriz \n");
 	for (i=0; i<n; i++) {
 		for(j=0; j<20; j++) {
 			printf("%c",tab[i][j]);
 		}
 		printf("\n");
 	}
-	printf("\n------");
 	return;
 }
 
@@ -116,22 +137,25 @@ int buscaElemento (char **v, int n, char *palavra, int tamP) {
 	int i, k, j, tamAux;
 	char *auxP, *copia;
 	auxP = malloc (100 * sizeof(char));
-	imprimeMatriz(v, n);
-	for (i = 0; i < n; i++) {
+	printf("\n Voltou em n: %d",n);
+	for (i = 0; i < n && v[i] != NULL; i++) {
+		printf("\n Entoru em i: %d",i);
+		fflush(stdout);
+		printf("\n Olha ai : %c",v[0][0]);
+		fflush(stdout);
 		for (j = 0 ; j < 20 && v[i][j] != ' '; j++) {
+			printf("\n Entoru em j: %d",j);
+			fflush(stdout);
 			auxP[j] = v[i][j];
 		}
+		printf("\n Saiu do for");
+		fflush(stdout);
 		tamAux = j;
-		
-		printf("\n Comparando ");
-		for (k = 0; k < tamAux; k++) { printf("%c", auxP[k]);}
-		printf(" com ------ ");
-		for (k = 0; k < tamP; k++) { printf("%c",palavra[k]);}
-		printf(" Resultado da comparação : %d", strcmp (auxP, palavra));
-		
 		if (comparaPalavras (auxP, tamAux, palavra, tamP) == 0)
 			return i;
 	}
+	printf("\n saiu do for");
+	fflush(stdout);
 	return -1;
 }
 
@@ -140,7 +164,8 @@ void insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 	int busca;
 	
 	busca = buscaElemento (v, n, ch, tamP);
-	printf("\n Buscou : %d",busca);
+	printf("\n Oi");
+	fflush(stdout);
 	if (n == 0) {
 		for (j = 0; j < tamP; j++) {
 			v[0][j] = ch[j];
@@ -148,18 +173,41 @@ void insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 		}
 	}
 	if (busca >= 0) {
-		printf("\n Somou");
 		w[busca]++;
 		return ;
 	}
-	for (i = 0; i < n && v[i][0] != ' '; i++) {}
+	for (i = 0; i < n && v[i] != NULL; i++) {
+		printf("\n Ta aqui em i: %d",i);
+		fflush(stdout);
+	}
 	lin = i;
+	printf("\n Saiu do ta aqui %d",i);
+	fflush(stdout);
+	if (lin >= n) {
+		printf("\n Passou do tamanho : %d",lin);
+		fflush(stdout);
+		printf("\n realocando : %d",lin);
+		v = redimensionaMatriz(v, n);
+		w = redimensionaVetor(w, n);
+		n += 1;
+		imprimeMatriz(v, n);
+		printf("\n realocoi");
+		fflush(stdout);
+	}
 	
+	printf("\n Bosta suja");
+	fflush(stdout);
 	for (j = 0; j < tamP; j++) {
+		printf("\n Lin = %d e j =%d", lin, j);
+		fflush(stdout);
+		
+		printf("\n Na matriz: no vetor:  e no char %c", ch[0]);
+		fflush(stdout);
 		v[lin][j] = ch[j];
 		w[lin] = 1;
 	}
-
+	printf("\n Inseriu");
+	fflush(stdout);
 	
 	return;
 	
@@ -167,12 +215,12 @@ void insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 
 void imprimeVetorFreq (char **v, int *w, int n) {
 	int i,j;
-	for (i = 0; i < n; i ++) {
+	for (i = 0; i < n && v[i][0] != ' '; i ++) {
 		printf("\n");
 		for (j = 0; j < n; j++) {
 			printf("%c",v[i][j]);
 		}
-		printf(" : %d", w[i]);
+		printf(": %d", w[i]);
 	}
 	return;
 }

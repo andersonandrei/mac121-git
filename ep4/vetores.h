@@ -32,3 +32,8 @@ void insereVetor (char **v, int *w, int n, char *ch, int tamP);
 int ordemAlfabeticaVetores (char *a, char *b);
 
 int insereOrdenadoVetor (char **v, int *w, int n, char *ch); 
+
+
+char ** redimensionaMatriz(char **tab, int n);
+
+int * redimensionaVetor(int *vetor, int n);

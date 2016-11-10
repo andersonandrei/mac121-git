@@ -14,10 +14,8 @@ int main () {
 	int *freq, soma = 0;
 	
 	int i, j, n = 0, k;
-	printf("\n Caralho");
-	fflush(stdout);
 	arq = malloc (100 * sizeof(char));
-	arq = "livro2.txt";
+	arq = "livro1.txt";
 	texto = fopen(arq, "r");
 	
 	palavra = malloc (100 * sizeof(char));
@@ -42,13 +40,10 @@ int main () {
 				i++;
 			}
 			if(especial	(ch) == 1)  { /* 60 = ' e 9 = tab */
-				printf("\n Mandou inserir: \n");
-				fflush(stdout);
-				for (k = 0; k < i; k++) { printf("%c",palavra[k]);}
 				insereVetor (tab, freq, n, palavra, i);
-				printf("\n ------------------------ ");
-				
-				printf("\n ------------------------ ");
+				printf("\n Inseriu -------------");
+				fflush(stdout);
+				imprimeMatriz(tab);
 				limpaPalavra(palavra, i);
 				i = 0;
 				n++;
@@ -58,7 +53,6 @@ int main () {
 		limpaPalavra(palavra, i);
 		
 	}
-	printf("\n -----------------------------------------");
 	imprimeVetorFreq(tab,freq,n);
 	for (i = 0; i < n; i++)
 		soma+=freq[i];
