@@ -100,7 +100,14 @@ void destroiMatriz(char **tab, int n){
 
 int buscaElemento (char **v, int n, char *palavra) {
 	int i, k;
-	for (i = 0; i < n && strcmp(v[i], palavra) != 0; i++) {}
+	for (i = 0; i < n && strcmp(v[i], palavra) != 0; i++) {
+		printf("\n Comparando, no ind = %d, com:",i);
+		for (k = 0; k < 9; k++) { printf("%c",v[i][k]);}
+		printf("com -=-----");
+		for (k = 0; k < 9; k++) { printf("%c",palavra[k]);}
+		printf("\n Resultado da comparação : %d", strcmp(v[i], palavra));
+	}
+	printf("\n Saiu com i = %d",i);
 	if ( i >= n ) return -1;
 	return i;
 }
@@ -110,6 +117,7 @@ int insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 	int busca;
 	
 	busca = buscaElemento (v, n, ch);
+	printf("\n Buscou : %d",busca);
 	
 	if (busca >= 0) {
 		w[busca]++;
@@ -123,6 +131,7 @@ int insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 	for (i = lin; i < n; i++) {
 		for (j = 0; j < tamP; j++) {
 			v[i][j] = ch[j];
+			w[i] = 1;
 		}
 	}
 	
