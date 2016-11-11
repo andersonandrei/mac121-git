@@ -26,7 +26,8 @@ char **criaMatriz (int n) {
 char ** redimensionaMatriz(char **tab, int n) {
 	int i , j;
 	char **novo;
-	novo = criaMatriz(n+1);
+	novo = criaMatriz(n+10);
+	zeraMatriz(novo, n+10);
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < n; j++)
 			novo[i][j] = tab[i][j];
@@ -38,7 +39,8 @@ char ** redimensionaMatriz(char **tab, int n) {
 int * redimensionaVetor(int *vetor, int n) {
 	int i , j;
 	int *novo;
-	novo = criaVetor((n+1));
+	novo = criaVetor((n+10));
+	zeraVetorInt(novo,n+10);
 	for (i = 0; i < n; i++) {
 		novo[i] = vetor[i];
 	}
@@ -58,8 +60,14 @@ void zeraMatriz(char **tab, int n) {
 
 void imprimeMatriz(char **tab, int n) {
 	int i,j;
+	printf("\n Entrou");
+	fflush(stdout);
 	for (i=0; i<n; i++) {
+		printf("\n Entrou imp i : %d",i);
+		fflush(stdout);
 		for(j=0; j<20; j++) {
+			printf("\n Entrou imp j : %d",j);
+			fflush(stdout);
 			printf("%c",tab[i][j]);
 		}
 		printf("\n");
@@ -138,10 +146,10 @@ int buscaElemento (char **v, int n, char *palavra, int tamP) {
 	char *auxP, *copia;
 	auxP = malloc (100 * sizeof(char));
 	printf("\n Voltou em n: %d",n);
-	for (i = 0; i < n && v[i] != NULL; i++) {
+	for (i = 0; i < n  && v[i][0] != ' '; i++) {
 		printf("\n Entoru em i: %d",i);
 		fflush(stdout);
-		printf("\n Olha ai : %c",v[0][0]);
+		printf("\n Olha ai : %d",v[0][0]);
 		fflush(stdout);
 		for (j = 0 ; j < 20 && v[i][j] != ' '; j++) {
 			printf("\n Entoru em j: %d",j);
@@ -159,7 +167,7 @@ int buscaElemento (char **v, int n, char *palavra, int tamP) {
 	return -1;
 }
 
-void insereVetor (char **v, int *w, int n, char *ch, int tamP) {
+int insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 	int i, j, lin, col, k;
 	int busca;
 	
@@ -174,7 +182,7 @@ void insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 	}
 	if (busca >= 0) {
 		w[busca]++;
-		return ;
+		return n ;
 	}
 	for (i = 0; i < n && v[i] != NULL; i++) {
 		printf("\n Ta aqui em i: %d",i);
@@ -189,7 +197,7 @@ void insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 		printf("\n realocando : %d",lin);
 		v = redimensionaMatriz(v, n);
 		w = redimensionaVetor(w, n);
-		n += 1;
+		n += 10;
 		imprimeMatriz(v, n);
 		printf("\n realocoi");
 		fflush(stdout);
@@ -207,9 +215,10 @@ void insereVetor (char **v, int *w, int n, char *ch, int tamP) {
 		w[lin] = 1;
 	}
 	printf("\n Inseriu");
+	imprimeMatriz(v,n);
 	fflush(stdout);
 	
-	return;
+	return n;
 	
 }
 

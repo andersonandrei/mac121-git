@@ -40,16 +40,16 @@ int main () {
 				i++;
 			}
 			if(especial	(ch) == 1)  { /* 60 = ' e 9 = tab */
-				insereVetor (tab, freq, n, palavra, i);
-				printf("\n Inseriu -------------");
+				n = insereVetor (tab, freq, n, palavra, i);
+				printf("\n Inseriu ------------- n = %d",n);
 				fflush(stdout);
-				imprimeMatriz(tab);
+				imprimeMatriz(tab,n);
 				limpaPalavra(palavra, i);
 				i = 0;
 				n++;
 			}
 		}
-		insereVetor (tab, freq, n, palavra, i);
+		n = insereVetor (tab, freq, n, palavra, i);
 		limpaPalavra(palavra, i);
 		
 	}
