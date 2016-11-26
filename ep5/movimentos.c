@@ -98,18 +98,18 @@ int **grauJogada (int **tabuleiro, int **grau, int cor, int n) {
 }
 
 forcaJogada jogadaMaisForte (int ** grau, int n) {
-	int i, k, maior = grau[0][0];
+	int i, k;
 	forcaJogada j;
 	j = malloc (sizeof (jogada) );
 	j -> qnt = 0;
 	j -> forca = grau[0][0];
 	
-	for (i = 0; i < n; i ++) {
-		for (k = 0; k < n; k++) {
+	for (i = 0; i < n-1; i ++) {
+		for (k = 0; k < n-1; k++) {
 			if (grau[i][k] == j -> forca) {
 				j -> qnt ++;
 			}
-			else if (grau[i][k] > maior) {
+			else if (grau[i][k] > j -> forca) {
 				j -> forca = grau[i][k];
 				j -> qnt = 1;
 			}
@@ -125,7 +125,7 @@ posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt) {
 	p = malloc (sizeof (pos) );
 	possibilidades = malloc (sizeof (qnt * sizeof (pos)) );
 	for (i = 0; i < n; i++) {
-		for (j = 0; j < n; j++) {
+		for (j = 0; j <n; j++) {
 			if (grau[i][j] == g) {
 				p -> lin = i;
 				p -> col = j;
@@ -134,9 +134,10 @@ posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt) {
 			}
 		}
 	}
-	sort = rand() % 10;
+	sort = 0; /* Ajustar o sort */
 	while (casaLivre (tabuleiro, possibilidades[sort] -> lin, possibilidades[sort] -> col) == 0) {
 		sort = rand() % 10;
+		printf("\n Sorteou : %d",sort);
 	}
 	
 	grau[possibilidades[sort] -> lin][possibilidades[sort] -> col] = 0;
@@ -144,16 +145,13 @@ posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt) {
 }
 
 posicao buscaForcaMatriz(int **tab, int forca) {
-
 	posicao casa;
 	int i, j;
-	printf("\n Entrou");
 	fflush (stdout);
 	casa = malloc (sizeof (pos) );
 	
 	for (i = 0; i < 14; i++) {
 		for (j = 0; j < 14; j++) {
-			printf("\n Ta na %d %d", i,j);
 			if (tab[i][j] == forca) {
 				casa -> lin = i;
 				casa -> col = j;
@@ -161,8 +159,6 @@ posicao buscaForcaMatriz(int **tab, int forca) {
 			}
 		}
 	}
-	
-	printf("\n casa: %d %d", casa -> lin,casa -> col);
 	
 	return casa;
 }
