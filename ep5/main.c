@@ -3,10 +3,11 @@
 #include <time.h>
 #include "movimentos.h"
 #include "matrizes.h"
+#include "pilhas.h"
 
 int main () {
 	int **tabuleiro, **grauJogadaBranca, **grauJogadaPreta;
-	int m, n;
+	int m, n ,tam = 14;
 	forcaJogada jog;
 	posicao proximaJogada;
 	int encerra;
@@ -21,10 +22,8 @@ int main () {
 	zeraMatriz(tabuleiro, 14, 14, -2);
 	zeraMatriz(grauJogadaBranca, 14, 14, 0);
 	zeraMatriz(grauJogadaPreta, 14, 14, 0);
-	
-	printf("\n Deseja encerrar o jogo: ");
-	scanf ("%d", &encerra);
-	while (encerra == 0) {
+
+	while (checaVitoria(tabuleiro, 0, tam) == 0 && checaVitoria(tabuleiro, 1, tam) == 0) {
 		printf("\nFaca uma jogada (m,n) :");
 		scanf("%d %d", &m,&n);
 		
@@ -47,8 +46,6 @@ int main () {
 	
 		tabuleiro[proximaJogada -> lin][proximaJogada -> col] = 0;
 		imprimeMatriz(tabuleiro, 14, 14);
-		printf("\n Deseja encerrar o jogo: ");
-		scanf ("%d", &encerra);
 	}
 
 	return 0;
