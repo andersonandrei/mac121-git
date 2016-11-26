@@ -14,11 +14,11 @@ int **criaMatriz(int lin, int col) {
 	return matriz;
 }
 
-void zeraMatriz(int **tab, int lin, int col) {
+void zeraMatriz(int **tab, int lin, int col, int valor) {
 	int i,j;
 	for(i=0; i< lin; i++){
 		for(j=0; j< col; j++){
-			tab[i][j] = 0;
+			tab[i][j] = valor;
 		}
 	}
 	return;
@@ -37,7 +37,7 @@ void imprimeMatriz(int **tab, int lin, int col) {
 	for (i=0; i<lin; i++) {
 		printf("\n");
 		for(j=0; j<col; j++) {
-			printf("%d ",tab[i][j]);
+			printf("%2d ",tab[i][j]);
 		}
 	}
 	return;

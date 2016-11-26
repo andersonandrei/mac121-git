@@ -4,7 +4,7 @@ int **criaMatriz(int lin, int col);
 
 /* Recebe um ponteiro para uma matriz, seu número de lin e colunas e 
  * zera todos os seus elementos. */
-void zeraMatriz(int **tab, int lin, int col);
+void zeraMatriz(int **tab, int lin, int col, int valor);
 
 /* Recebe um ponteiro para uma matriz, seu número de lin e colunas e
  * libera o espaço que foi alocado para tal. */

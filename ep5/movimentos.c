@@ -1,6 +1,9 @@
+#include "movimentos.h"
+#include "matrizes.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "movimentos.h"
+#include <time.h>
+
 
 	/*Casa adjascentes dada i,j				 
 		i, j-1
@@ -20,12 +23,13 @@
 	*/
 
 int casaLivre (int **tabuleiro, int i, int j) {
-	if ( (i >= 0 && i < n && j >= 0 && j < n) && tabuleiro[i][j] == -1)
+	if ( (i >= 0 && i < 14 && j >= 0 && j < 14) && (tabuleiro[i][j] != 1 && tabuleiro[i][j] != 0) )
 		return 1;
 	return 0;
 }
 
 int **jogadaPonte (int **tabuleiro, int **grau, int cor, int n) {
+	int i, j;
 	for (i = 0; i < n; i++ ){
 		for (j = 0; j < n; j++) {
 			if (tabuleiro[i][j] == cor) {
@@ -54,27 +58,27 @@ int **jogadaPonte (int **tabuleiro, int **grau, int cor, int n) {
 }
 
 int **jogadaAdjascente (int **tabuleiro, int **grau, int cor, int n) {
+	int i, j;
 	for (i = 0; i < n; i++ ){
 		for (j = 0; j < n; j++) {
-			
+			if (tabuleiro[i][j] == cor) {
 				if (casaLivre (tabuleiro, i, j-1) )
-					grau[i][j-1] += 10;
+					grau[i][j-1] += 5;
 					
 				if (casaLivre (tabuleiro, i-1, j) )
-					grau[i-1][j] += 10;
+					grau[i-1][j] += 5;
 					
 				if (casaLivre (tabuleiro, i-1, j-1) )
-					grau[i-1][j-1] += 10;
+					grau[i-1][j-1] += 5;
 				
 				if (casaLivre (tabuleiro, i, j+1) )
-					grau[i][j+1] += 10;
+					grau[i][j+1] += 5;
 				
 				if (casaLivre (tabuleiro, i+1, j) )
-					grau[i+1][j] += 10;
+					grau[i+1][j] += 5;
 				
 				if (casaLivre (tabuleiro, i+1, j+1) )
-					grau[i+1][j+1] += 10;
-	
+					grau[i+1][j+1] += 5;
 			}
 		}
 	}
@@ -82,37 +86,40 @@ int **jogadaAdjascente (int **tabuleiro, int **grau, int cor, int n) {
 }
 
 int **grauJogada (int **tabuleiro, int **grau, int cor, int n) {
+	printf("\n Antes da Ponte:\n");
+	imprimeMatriz (grau, 14, 14);
 	grau = jogadaPonte (tabuleiro, grau, cor, n);
+	printf("\n Depois da Ponte:\n");
+	imprimeMatriz (grau, 14, 14);
 	grau = jogadaAdjascente (tabuleiro, grau, cor, n);
+	printf("\n Depois da Adsjacente:\n");
+	imprimeMatriz (grau, 14, 14);
 	return grau;
 }
 
 forcaJogada jogadaMaisForte (int ** grau, int n) {
-	int i, j, maior = grau[0][0];
-	int cont = 0;
+	int i, k, maior = grau[0][0];
 	forcaJogada j;
 	j = malloc (sizeof (jogada) );
 	j -> qnt = 0;
 	j -> forca = grau[0][0];
 	
 	for (i = 0; i < n; i ++) {
-		for (j = 0; j < n; j++) {
-			if (grau[i][j] == j -> forca) {
-				forca -> qnt ++;
+		for (k = 0; k < n; k++) {
+			if (grau[i][k] == j -> forca) {
+				j -> qnt ++;
 			}
-			else if (grau[i][j] > maior) {
-				j -> forca = grau[i][j];
-				forca -> qnt = 1;
+			else if (grau[i][k] > maior) {
+				j -> forca = grau[i][k];
+				j -> qnt = 1;
 			}
 		}
-	return forcaJogada;
+	}
+	return j;
 }
-
-	srand( (unsigned)time(NULL) );
-	x = 1 + ( rand() % 10 )
 	
-posicao sorteiaJogada (int **grau, int n, int g, int qnt) {
-	posicao *possibildades, p;
+posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt) {
+	posicao *possibilidades, p;
 	int i, j , k = 0, sort;
 	srand( (unsigned)time(NULL) );
 	p = malloc (sizeof (pos) );
@@ -128,9 +135,37 @@ posicao sorteiaJogada (int **grau, int n, int g, int qnt) {
 		}
 	}
 	sort = rand() % 10;
-	return possibildades[sort];
+	while (casaLivre (tabuleiro, possibilidades[sort] -> lin, possibilidades[sort] -> col) == 0) {
+		sort = rand() % 10;
+	}
+	
+	grau[possibilidades[sort] -> lin][possibilidades[sort] -> col] = 0;
+	return possibilidades[sort];
 }
 
+posicao buscaForcaMatriz(int **tab, int forca) {
+
+	posicao casa;
+	int i, j;
+	printf("\n Entrou");
+	fflush (stdout);
+	casa = malloc (sizeof (pos) );
+	
+	for (i = 0; i < 14; i++) {
+		for (j = 0; j < 14; j++) {
+			printf("\n Ta na %d %d", i,j);
+			if (tab[i][j] == forca) {
+				casa -> lin = i;
+				casa -> col = j;
+				tab[i][j] = 0;
+			}
+		}
+	}
+	
+	printf("\n casa: %d %d", casa -> lin,casa -> col);
+	
+	return casa;
+}
 
 
 
