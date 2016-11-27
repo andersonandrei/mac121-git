@@ -163,7 +163,6 @@ posicao buscaForcaMatriz(int **tab, int forca) {
 	return casa;
 }
 
-
 posicao *pecasNasParede (int **tabuleiro, int n, int cor, int *tamLista) {
 	posicao *lista, p;
 	int i, k = 0;
@@ -378,91 +377,54 @@ int chegouFinal (int **tabuleiro, int n, int i, int j, int cor) {
 }
 
 int checaVitoria (int **tabuleiro, int cor, int n) {
-	int mov, ultMov, ok, i;
+	int mov , ultMov, ok, i, atual;
 	int indParede, qntParede = 0; 
-	posicao *parede, p;
+	posicao p;
 	pilha *movimento;
+	int pecal,pecac;
 	
-	printf("\n Entrou na checagem para cor: %d",cor);
-	fflush(stdout);	
-	parede = malloc (n * sizeof (pos) );
-	p =  malloc (sizeof (pos) );	
-	parede = pecasNasParede (tabuleiro, n, cor, &qntParede);
-	printf("\n olhando pras pardes:");
-	for (i = 0; i < qntParede; i++ )
-		printf("\n\n em %d : %d %d",i, parede[i] -> lin, parede[i] -> col );
-	printf("\n Malocou");
-	fflush(stdout);
+	
+	p = malloc (sizeof (pos) );
+	p -> lin = 0;
+	p -> col = 0;
 	movimento = criaPilha(n*n);
-	printf("\n Criou pilhas	");
-	fflush(stdout);
 	if (movimento == NULL) printf("\n merda");
-	ok = 0;
-	indParede = 0;
-	ultMov = 0;
-	printf("\n Antes do p ");
-	fflush(stdout);
-	if (qntParede > 1) {
-		printf("\n Temos em 0 -- = %d %d",parede[0] -> lin, parede[0] -> col);
-		p -> lin = parede[indParede] -> lin;
-		p -> col = parede[indParede] -> col;
-	}
-	else {
-		p -> lin = 0;
-		p -> col = 0;
-	}
-	printf("\n Atribui");
-	fflush(stdout);
-	
-	printf("\n\n Backtacking pra cor : %d, qntParede = %d",cor, qntParede);
-	while(indParede < qntParede && chegouFinal (tabuleiro, n, p -> lin, p -> col, cor) == 0) {
-		printf("\n ----- Entrou ---- com qntParede: %d",qntParede);
-		printf("\n Olhando para %d i j = %d %d",indParede,p -> lin, p -> col);
-		ok = 0;
-		printf("\n ok = %d e ultMov = %d", ok,ultMov);
-		mov = 1;
+	atual = 1;
+	mov = 1;
+	ok=0;
+	while(tabuleiro[p->lin][p->col] == cor && chegouFinal (tabuleiro, n, p -> lin,p -> col, cor) == 0 ) {
+		ok=0;
 		while(mov <= 6 && ok == 0){
-			printf("\n Testando mov: %d",mov);
 			if (podeMover(tabuleiro,p -> lin, p -> col,mov, ultMov, n, cor) == 1)
 			{
-				printf("movimento aceito = %d",mov);
-				ok =1;
+				ok = 1;
 			}
 			else
 			{
 				mov ++;
 			}
 		}
-		if(ok == 1) {
-			printf("\n Movimento válido! ------ ");
-			empilha(movimento, mov);
+		if(ok ==1) {
+			empilha(movimento,mov);
 			p = anda(tabuleiro,p -> lin, p -> col,mov,n);
-			printf("\n\n Andou para %d %d", p-> lin, p -> col );
+			atual++;
 			ultMov = mov;
 			mov = 1;
+			
 		}
 		else { /* BakcTrack*/
-			printf("\n Backtrackou");
 			if(pilhaVazia(movimento) == 1) {
 				printf("\n Deu ruim.");
-				fflush(stdout);
-				indParede++;
+				return 0;
 			}
 			else { 
 				printf("\n Despula: ");
 				mov = desempilha(movimento);
-				printf("\n Desempilhou : %d", mov);
-				printf("\n\n Antes de desandar para %d %d", p-> lin, p -> col );
 				p = volta(tabuleiro,p -> lin, p -> col,mov,&ultMov,n);
-				printf("\n\n DesAndou para %d %d", p-> lin, p -> col );
+				atual--;
 				mov++;
 			}
 		}
-		printf("\n saiu aqui");
-		fflush(stdout);
-
-		printf("\n Olhando para i j = %d %d",p -> lin, p -> col);
-		fflush(stdout);
 	}
 	return 0;
 }
