@@ -364,7 +364,7 @@ posicao volta(int **tabuleiro, int i, int j, int mov, int *ultMov, int n) {
 }
 
 int chegouFinal (int **tabuleiro, int n, int i, int j, int cor) {
-	if (cor == 0) {
+	if (cor == 1) {
 		if (i != 13)
 			return 0;
 		return 1;
@@ -426,6 +426,9 @@ int checaVitoria (int **tabuleiro, int cor, int n) {
 			}
 		}
 	}
+	
+	if (chegouFinal (tabuleiro, n, p -> lin,p -> col, cor) == 1)
+		return 1;
 	return 0;
 }
 
