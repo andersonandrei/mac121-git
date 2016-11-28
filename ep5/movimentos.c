@@ -276,18 +276,18 @@ posicao *checaAdjascentes (int **tabuleiro, int n, int cor, int *tamLista, int i
 	return lista;
 }
 
-int podeMover(int **tabuleiro, int i, int j, int mov, int ultMov, int n, int cor) {
-	if (mov == 1 && ultMov != 4) 
+int podeMover(int **tabuleiro, int i, int j, int mov, int ultMov, int n, int cor, posicao *vetor, int tamVetor) {
+	if (mov == 1 && ultMov != 4 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
 		if (indiceValido (tabuleiro, n, i, j+1) && tabuleiro [i][j+1] == cor ) return 1;
-	if (mov == 2 && ultMov != 5) 
+	if (mov == 2 && ultMov != 5 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
 		if (indiceValido (tabuleiro, n, i-1, j) && tabuleiro [i-1][j] == cor ) return 1;
-	if (mov == 3 && ultMov != 6) 
+	if (mov == 3 && ultMov != 6 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
 		if (indiceValido (tabuleiro, n, i-1, j-1) && tabuleiro [i-1][j-1] == cor ) return 1;
-	if (mov == 4 && ultMov != 1) 
+	if (mov == 4 && ultMov != 1 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
 		if (indiceValido (tabuleiro, n, i, j-1) && tabuleiro [i][j-1] == cor )  return 1;
-	if (mov == 5 && ultMov != 2) 
+	if (mov == 5 && ultMov != 2 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
 		if (indiceValido (tabuleiro, n, i+1, j) && tabuleiro [i+1][j] == cor )return 1;
-	if (mov == 6 && ultMov != 3) 
+	if (mov == 6 && ultMov != 3 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
 		if (indiceValido (tabuleiro, n, i+1, j+1) && tabuleiro [i+1][j+1] == cor ) return 1;
 	return 0;
 }
@@ -376,17 +376,49 @@ int chegouFinal (int **tabuleiro, int n, int i, int j, int cor) {
 	}
 }
 
+void zeraVetorPos (posicao *vetor, int n) {
+	posicao p = malloc (sizeof (pos) );
+	int i;
+	p -> lin = -1;
+	p -> col = -1;
+	for (i = 0; i < n; i++)
+		vetor[i] = p;
+	return;
+}
+
+int checaNoVetor (posicao *vetor, int n, int l, int c) {
+	int i;
+	for (i = 0; i < n * n; i++) {
+		if (vetor[i] -> lin == l && vetor[i] -> col == c)
+			return 1;
+	}
+	return 0;
+}
+
 int checaVitoria (int **tabuleiro, int cor, int n) {
-	int mov , ultMov, ok, i, atual;
-	int indParede, qntParede = 0; 
-	posicao p;
+	posicao *parede;
+	int i, qntParede = 0, fim = 0;
+	parede = malloc (n * sizeof (pos) );
+	parede = pecasNasParede (tabuleiro, n, cor, &qntParede);
+	for (i = 0; i < qntParede; i++) {
+		fim = checaCaminho (tabuleiro, cor, n, parede[i] -> lin, parede[i] -> col);
+		if (fim == 1)
+			return 1;
+	}
+	return 0;
+}
+
+
+int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col) {
+	int mov , ultMov, ok, atual, qntJaViu = 1;
+	posicao p, *jaViu;
 	pilha *movimento;
-	int pecal,pecac;
-	
-	
+	jaViu = malloc ((n*n) * sizeof (pos) );
+	zeraVetorPos (jaViu, n);
 	p = malloc (sizeof (pos) );
-	p -> lin = 0;
-	p -> col = 0;
+	p -> lin = lin;
+	p -> col = col;
+	jaViu[0] = p;
 	movimento = criaPilha(n*n);
 	if (movimento == NULL) printf("\n merda");
 	atual = 1;
@@ -395,7 +427,7 @@ int checaVitoria (int **tabuleiro, int cor, int n) {
 	while(tabuleiro[p->lin][p->col] == cor && chegouFinal (tabuleiro, n, p -> lin,p -> col, cor) == 0 ) {
 		ok=0;
 		while(mov <= 6 && ok == 0){
-			if (podeMover(tabuleiro,p -> lin, p -> col,mov, ultMov, n, cor) == 1)
+			if (podeMover(tabuleiro,p -> lin, p -> col,mov, ultMov, n, cor, jaViu, qntJaViu) == 1)
 			{
 				ok = 1;
 			}
@@ -405,8 +437,10 @@ int checaVitoria (int **tabuleiro, int cor, int n) {
 			}
 		}
 		if(ok ==1) {
+			printf("\n Moveu para %d",mov);
 			empilha(movimento,mov);
 			p = anda(tabuleiro,p -> lin, p -> col,mov,n);
+			jaViu[qntJaViu] = p;
 			atual++;
 			ultMov = mov;
 			mov = 1;
@@ -420,7 +454,9 @@ int checaVitoria (int **tabuleiro, int cor, int n) {
 			else { 
 				printf("\n Despula: ");
 				mov = desempilha(movimento);
+				printf("\n mov antigo: %d",mov);
 				p = volta(tabuleiro,p -> lin, p -> col,mov,&ultMov,n);
+				printf("\n ultmov : %d",ultMov);
 				atual--;
 				mov++;
 			}

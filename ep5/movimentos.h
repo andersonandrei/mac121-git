@@ -33,7 +33,7 @@ int indiceValido (int **tabuleiro, int n, int i, int j);
 
 posicao *checaAdjascentes (int **tabuleiro, int n, int cor, int *tamLista, int i, int j);
 
-int podeMover(int **tabuleiro, int i, int j, int mov, int ultMov, int n, int cor);
+int podeMover(int **tabuleiro, int i, int j, int mov, int ultMov, int n, int cor, posicao *vetor, int tamVetor);
 
 posicao anda(int **tabuleiro, int i, int j, int mov, int n) ;
 
@@ -43,7 +43,11 @@ int chegouFinal (int **tabuleiro, int n, int i, int j, int cor);
 
 int checaVitoria (int **tabuleiro, int cor, int n);
 
+int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col);
 
+void zeraVetorPos (posicao *vetor, int n);
+
+int checaNoVetor (posicao *vetor, int n, int l, int c) ;
 
 
 

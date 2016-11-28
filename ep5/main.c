@@ -10,7 +10,6 @@ int main () {
 	int m, n ,tam = 14;
 	forcaJogada jog;
 	posicao proximaJogada;
-	int encerra;
 	
 	proximaJogada = malloc (sizeof (pos) );
 	jog = malloc (sizeof (jogada) );
