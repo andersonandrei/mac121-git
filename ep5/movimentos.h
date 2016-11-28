@@ -15,6 +15,10 @@ typedef pos *posicao;
 
 int casaLivre (int **tabuleiro,int n, int i, int j);
 
+int **jogadaLivre(int **tabuleiro, int n, int **grau, int cor);
+
+int existeJogada (int **grau, int n);
+
 int **jogadaPonte (int **tabuleiro, int n, int **grau, int cor);
 
 int **jogadaAdjascente (int **tabuleiro, int n, int **grau, int cor);
@@ -25,7 +29,7 @@ forcaJogada jogadaMaisForte (int ** grau, int n);
 	
 posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt);
 
-posicao buscaForcaMatriz(int **tabuleiro, int n, int **grau,int tamGrau, int forca);
+posicao buscaForcaMatriz(int **tabuleiro, int n, int **grau, int forca);
 
 posicao *pecasNasParede (int **tabuleiro, int n, int cor, int *tamLista);
 
@@ -48,6 +52,8 @@ int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col);
 void zeraVetorPos (posicao *vetor, int n);
 
 int checaNoVetor (posicao *vetor, int n, int l, int c) ;
+
+
 
 
 

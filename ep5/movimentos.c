@@ -30,6 +30,27 @@ int casaLivre (int **tabuleiro,int n, int i, int j) {
 	return 0;
 }
 
+int **jogadaLivre(int **tabuleiro, int n, int **grau, int cor) {
+	int i, j;
+	for (i = 0; i < n; i++ ){
+		for (j = 0; j < n; j++) {
+			if (tabuleiro[i][j] == -2) {
+				grau[i][j] = 0;
+			}
+		}
+	}
+	return grau;
+}
+
+int existeJogada (int **grau, int n) {
+	int i, j ;
+	for (i = 0; i < n; i++)
+		for (j = 0; j < n; j++)
+			if (grau[i][j] == 0)
+				return 1;
+	return 0;
+}
+
 int **jogadaPonte (int **tabuleiro, int n, int **grau, int cor) {
 	int i, j;
 	for (i = 0; i < n; i++ ){
@@ -56,9 +77,6 @@ int **jogadaPonte (int **tabuleiro, int n, int **grau, int cor) {
 			}
 		}
 	}
-	
-	printf("\n To retornando grau:");
-	imprimeMatriz(grau,n,n);
 	return grau;
 }
 
@@ -92,14 +110,18 @@ int **jogadaAdjascente (int **tabuleiro, int n, int **grau, int cor) {
 
 int **grauJogada (int **tabuleiro, int n, int **grau, int cor) {
 	
-	printf("\n Recebeeeeeu");
-	imprimeMatriz(grau, n, n);
-	printf("\n Antes da Ponte:\n");
+	grau = jogadaLivre(tabuleiro, n, grau, cor);
+	
+	printf("\n Livres:\n");
 	imprimeMatriz (grau, n, n);
+	
 	grau = jogadaPonte (tabuleiro, n, grau, cor);
+	
 	printf("\n Depois da Ponte:\n");
 	imprimeMatriz (grau, n, n);
+	
 	grau = jogadaAdjascente (tabuleiro, n, grau, cor);
+	
 	printf("\n Depois da Adsjacente:\n");
 	imprimeMatriz (grau, n, n);
 	return grau;
@@ -109,11 +131,18 @@ forcaJogada jogadaMaisForte (int ** grau, int n) {
 	int i, k;
 	forcaJogada j;
 	j = malloc (sizeof (jogada) );
-	j -> qnt = 0;
-	j -> forca = grau[0][0];
 	
-	for (i = 0; i < n-1; i ++) {
-		for (k = 0; k < n-1; k++) {
+	for (i = 0; i < n; i++) {
+		for (k = 0; k < n; k++) {
+			if (grau[i][k] >= 0) {
+				j -> qnt = 1;
+				j -> forca = grau[i][k];
+			}
+		}
+	}
+	
+	for (i = 0; i < n; i ++) {
+		for (k = 0; k < n; k++) {
 			if (grau[i][k] == j -> forca) {
 				j -> qnt ++;
 			}
@@ -123,6 +152,7 @@ forcaJogada jogadaMaisForte (int ** grau, int n) {
 			}
 		}
 	}
+
 	return j;
 }
 	
@@ -153,13 +183,13 @@ posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt) {
 	return possibilidades[sort];
 }
 
-posicao buscaForcaMatriz(int **tabuleiro, int n, int **grau, int tamGrau, int forca) {
-	
+posicao buscaForcaMatriz(int **tabuleiro, int n, int **grau, int forca) {
 	
 	/* Arrumar aqui pra nao dar xabu quando nao encontra nenhuma casa*/
 	posicao casa;
-	int i, j, achou = 0;
+	int i, j;
 	casa = malloc (sizeof (pos) );
+
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < n; j++) {
 			if (grau[i][j] == forca && tabuleiro[i][j] != 1 && tabuleiro[i][j] != 0 ) {
@@ -179,14 +209,12 @@ posicao *pecasNasParede (int **tabuleiro, int n, int cor, int *tamLista) {
 	lista = malloc (n * sizeof (pos) );
 
 	if (cor == 1) { /* Definido que brancas vao da linha 0 até a linha n */
-
 		for (i = 0; i < n; i++) {
 			if (tabuleiro[0][i] == 1) {
 				p -> lin = 0;
 				p -> col = i;
 				lista[k] = p;
 				k++;
-				
 			}
 		}
 	}
@@ -261,17 +289,17 @@ posicao *checaAdjascentes (int **tabuleiro, int n, int cor, int *tamLista, int i
 }
 
 int podeMover(int **tabuleiro, int i, int j, int mov, int ultMov, int n, int cor, posicao *vetor, int tamVetor) {
-	if (mov == 1 && ultMov != 4 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
+	if (mov == 1 && ultMov != 4 && checaNoVetor(vetor, tamVetor, i, j+1) == 0) 
 		if (indiceValido (tabuleiro, n, i, j+1) && tabuleiro [i][j+1] == cor ) return 1;
-	if (mov == 2 && ultMov != 5 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
+	if (mov == 2 && ultMov != 5 && checaNoVetor(vetor, tamVetor, i-1, j) == 0) 
 		if (indiceValido (tabuleiro, n, i-1, j) && tabuleiro [i-1][j] == cor ) return 1;
-	if (mov == 3 && ultMov != 6 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
+	if (mov == 3 && ultMov != 6 && checaNoVetor(vetor, tamVetor, i-1, j-1) == 0) 
 		if (indiceValido (tabuleiro, n, i-1, j-1) && tabuleiro [i-1][j-1] == cor ) return 1;
-	if (mov == 4 && ultMov != 1 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
+	if (mov == 4 && ultMov != 1 && checaNoVetor(vetor, tamVetor, i, j-1) == 0) 
 		if (indiceValido (tabuleiro, n, i, j-1) && tabuleiro [i][j-1] == cor )  return 1;
-	if (mov == 5 && ultMov != 2 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
+	if (mov == 5 && ultMov != 2 && checaNoVetor(vetor, tamVetor, i+1, j) == 0) 
 		if (indiceValido (tabuleiro, n, i+1, j) && tabuleiro [i+1][j] == cor )return 1;
-	if (mov == 6 && ultMov != 3 && checaNoVetor(vetor, tamVetor, i, j) == 0) 
+	if (mov == 6 && ultMov != 3 && checaNoVetor(vetor, tamVetor, i+1, j+1) == 0) 
 		if (indiceValido (tabuleiro, n, i+1, j+1) && tabuleiro [i+1][j+1] == cor ) return 1;
 	return 0;
 }
@@ -378,14 +406,33 @@ int checaNoVetor (posicao *vetor, int n, int l, int c) {
 }
 
 int checaVitoria (int **tabuleiro, int cor, int n) {
-	posicao *parede;
-	int i, qntParede = 0, fim = 0;
-	parede = malloc (n * sizeof (pos) );
-	parede = pecasNasParede (tabuleiro, n, cor, &qntParede);
-	for (i = 0; i < qntParede; i++) {
-		fim = checaCaminho (tabuleiro, cor, n, parede[i] -> lin, parede[i] -> col);
-		if (fim == 1)
-			return 1;
+	posicao p;
+	int i, fim = 0;
+	p = malloc (sizeof (pos) );
+	if (cor == 1) {
+		for (i = 0; i < n; i++) {
+			if (tabuleiro[0][i] == cor) {
+				p -> lin = 0;
+				p -> col = i;
+			
+				fim = checaCaminho (tabuleiro, cor, n, p -> lin, p -> col);
+				if (fim == 1)
+					return 1;
+			}	
+		}
+	}
+	
+	if (cor == 0) {
+		for (i = 0; i < n; i++) {
+			if (tabuleiro[i][0] == cor) {
+				p -> lin = i;
+				p -> col = 0;
+			
+				fim = checaCaminho (tabuleiro, cor, n, p -> lin, p -> col);
+				if (fim == 1)
+					return 1;		
+			}
+		}
 	}
 	return 0;
 }
@@ -443,7 +490,6 @@ int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col) {
 		
 		
 	}
-	
 	
 	if (chegouFinal (tabuleiro, n, p -> lin,p -> col, cor) == 1)
 		return 1;

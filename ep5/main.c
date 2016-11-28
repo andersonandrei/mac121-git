@@ -8,7 +8,7 @@
 int main (int argc, char **argv) {
 	int **tabuleiro, **grauJogadaBranca, **grauJogadaPreta;
 	int m, n, vitP, vitB,tam = 5;
-	int corPreta, corBranca, modoVerboso, troca = 0;
+	int corPreta, corBranca, modoVerboso, eJogada, troca = 0;
 	forcaJogada jog;
 	posicao proximaJogada;
 	
@@ -82,25 +82,31 @@ int main (int argc, char **argv) {
 		}
 		
 		tabuleiro[m][n] = corBranca;
+		
 		if (modoVerboso == 1)
 			imprimeMatriz (tabuleiro, tam, tam);
-		printf("\n Colocou 1 em : %d %d ", m,n);
 			
 		/* Calcular jogada da maquina */
 		zeraMatriz(grauJogadaPreta, tam, tam, -1);
-		grauJogadaPreta = grauJogada(tabuleiro, tam, grauJogadaPreta, corPreta);
-		jog = jogadaMaisForte (grauJogadaPreta, tam);
-		if (jog -> qnt > 1) {
-			proximaJogada = sorteiaJogada (tabuleiro, grauJogadaPreta, tam, jog -> forca, jog -> qnt);
-		}
-		else { /* Só uma casa com aquela força de ocorrencia */
-			proximaJogada = buscaForcaMatriz(tabuleiro, n, grauJogadaPreta, tamGrau, jog -> forca); /* Fazer a busca Matriz */
-		}
-		printf("\n Sorteou : %d %d ", proximaJogada -> lin,proximaJogada -> col);
-		tabuleiro[proximaJogada -> lin][proximaJogada -> col] = corPreta;
-		printf("\n Jogo:");
-		if (modoVerboso == 1)
+		grauJogadaPreta = jogadaLivre (tabuleiro, tam, grauJogadaPreta, corPreta);
+		eJogada = existeJogada (grauJogadaPreta, tam);
+		
+		if (eJogada == 1) {
+			grauJogadaPreta = grauJogada(tabuleiro, tam, grauJogadaPreta, corPreta);
+			jog = jogadaMaisForte (grauJogadaPreta, tam);
+			if (jog -> qnt > 1) {
+				proximaJogada = sorteiaJogada (tabuleiro, grauJogadaPreta, tam, jog -> forca, jog -> qnt);
+			}
+			else { /* Só uma casa com aquela força de ocorrencia */
+				proximaJogada = buscaForcaMatriz(tabuleiro, tam, grauJogadaPreta, jog -> forca); /* Fazer a busca Matriz */
+			}
+			tabuleiro[proximaJogada -> lin][proximaJogada -> col] = corPreta;
+			if (modoVerboso == 1)
 			imprimeMatriz(tabuleiro, tam, tam);
+		}
+		else {
+			printf("\n Sem jogada disponivel");
+		}
 		vitB = checaVitoria(tabuleiro, corBranca, tam);
 		vitP = checaVitoria(tabuleiro, corPreta, tam);
 	}
