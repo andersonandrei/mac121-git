@@ -5,23 +5,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-	/*
-	 * Casa adjascentes dada i,j				 
-		i, j-1
-		i-1, j
-		i-1, j-1
-		i, j+1
-		i+1, j
-		i+1, j+1
-		
-		[i][j-1]
-		[i-1][j]
-		[i-1][j-1]
-		[i][j+1]
-		[i+1][j]
-		[i+1][j+1]
-		
-	*/
 
 int casaLivre (int **tabuleiro,int n, int i, int j) {
 	if ( i >= 0 && i < n && j >= 0 && j < n && tabuleiro[i][j] != 1 && tabuleiro[i][j] != 0 )
@@ -139,7 +122,6 @@ forcaJogada jogadaMaisForte (int ** grau, int n) {
 			}
 		}
 	}
-
 	return j;
 }
 	
@@ -171,8 +153,6 @@ posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt) {
 }
 
 posicao buscaForcaMatriz(int **tabuleiro, int n, int **grau, int forca) {
-	
-	/* Arrumar aqui pra nao dar xabu quando nao encontra nenhuma casa*/
 	posicao casa;
 	int i, j;
 	casa = malloc (sizeof (pos) );
@@ -230,7 +210,7 @@ int indiceValido (int **tabuleiro, int n, int i, int j) {
 posicao *checaAdjascentes (int **tabuleiro, int n, int cor, int *tamLista, int i, int j) {
 	posicao *lista, p;
 	int k = 0;
-	p = malloc (sizeof (pos) );
+	p = malloc (sizeof (pos));
 	lista = malloc (n * sizeof (pos) );
 
 	if (indiceValido (tabuleiro, n, i, j-1) && tabuleiro [i][j-1] == cor ) {
@@ -365,11 +345,12 @@ int chegouFinal (int **tabuleiro, int n, int i, int j, int cor) {
 			return 0;
 		return 1;
 	}
-	else {
+	if (cor == 0) {
 		if (j != n-1)
 			return 0;
 		return 1;
 	}
+	return 0;
 }
 
 void zeraVetorPos (posicao *vetor, int n) {
@@ -395,9 +376,9 @@ int checaNoVetor (posicao *vetor, int n, int l, int c) {
 int checaVitoria (int **tabuleiro, int cor, int n) {
 	posicao p;
 	int i, fim = 0;
-	p = malloc (sizeof (pos) );
+	p = malloc (sizeof (pos));
 	if (cor == 1) {
-		for (i = 0; i < n; i++) {
+		for (i = 0; i < n-1; i++) {
 			if (tabuleiro[0][i] == cor) {
 				p -> lin = 0;
 				p -> col = i;
@@ -410,7 +391,7 @@ int checaVitoria (int **tabuleiro, int cor, int n) {
 	}
 	
 	if (cor == 0) {
-		for (i = 0; i < n; i++) {
+		for (i = 0; i < n-1; i++) {
 			if (tabuleiro[i][0] == cor) {
 				p -> lin = i;
 				p -> col = 0;
@@ -429,7 +410,7 @@ int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col) {
 	int mov , ultMov, ok, atual, qntJaViu = 0;
 	posicao p, *jaViu;
 	pilha *movimento;
-	jaViu = malloc ((n*n) * sizeof (pos) );
+	jaViu = malloc ((n*n) * sizeof (pos));
 	zeraVetorPos (jaViu, n);
 	p = malloc (sizeof (pos) );
 	p -> lin = lin;
