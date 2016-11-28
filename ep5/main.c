@@ -20,12 +20,20 @@ int main (int argc, char **argv) {
 	tabuleiro = criaMatriz(tam, tam);
 
 	if (argc > 3) {
-		printf("\n Insira apenas 2 argumentos na linha de comando. Re-execute o programa.\n");
 		return 0;
 	}
+			
+	if (argc == 3) {
+		if (argv[2][0] == 'd')
+			modoVerboso = 1;
+		else
+			modoVerboso = 0;
+	}
 	
-	
-	if (argv[1][0] == 'b') {
+	if (argc == 2) 
+		modoVerboso = 0;
+
+	if (argv[1][0] == 'b' || (argv[1][0] != 'b' && argv[1][0] != 'p' )) {
 		corBranca = 1;
 		corPreta = 0;
 	}
@@ -35,38 +43,17 @@ int main (int argc, char **argv) {
 		corPreta = 1;
 	}
 	
-	else {
-		printf("\n No segundo paramentro só é permitido as opções 'b' ou 'p'\n");
-		return 0;
-	}
-
-	printf("argv 0,2 %c",argv[2][0]);
-
-	if (argv[2][0] == 48) {
-		modoVerboso = 0;
-	}
-	else if (argv[2][0] == 49) {
-		modoVerboso = 1;
-	}
-	else {
-		printf("\n No segundo paramentro só é permitido as opções '0' ou '1'\n");
-		return 0;
-	}
-	
 	zeraMatriz(tabuleiro, tam, tam, -2);
 	zeraMatriz(grauJogadaBranca, tam, tam, -1);
 	zeraMatriz(grauJogadaPreta, tam, tam, -1);
-	imprimeMatriz(grauJogadaPreta, tam, tam);
 	
 	vitB = checaVitoria(tabuleiro, corBranca, tam);
 	vitP = checaVitoria(tabuleiro, corPreta, tam);
 
 	while (vitP == 0 && vitB == 0) {
-		printf("\nFaca uma jogada (m,n) :");
 		scanf("%d %d", &m,&n);
 		
 		if (m == tam/2 && n == tam/2 && troca == 0) {
-			printf("\n Inverteu");
 			corBranca = corPreta;
 			corPreta = 1;
 			troca = 1;
@@ -77,14 +64,10 @@ int main (int argc, char **argv) {
 		}
 		
 		while (casaLivre (tabuleiro, tam, m, n) == 0) {
-			printf("\nJogada invalida \nFaca uma jogada (m,n) :");
 			scanf("%d %d", &m,&n);
 		}
 		
 		tabuleiro[m][n] = corBranca;
-		
-		if (modoVerboso == 1)
-			imprimeMatriz (tabuleiro, tam, tam);
 			
 		/* Calcular jogada da maquina */
 		zeraMatriz(grauJogadaPreta, tam, tam, -1);
@@ -100,23 +83,22 @@ int main (int argc, char **argv) {
 			else { /* Só uma casa com aquela força de ocorrencia */
 				proximaJogada = buscaForcaMatriz(tabuleiro, tam, grauJogadaPreta, jog -> forca); /* Fazer a busca Matriz */
 			}
+			printf("%d %d\n", proximaJogada -> lin, proximaJogada -> col);
 			tabuleiro[proximaJogada -> lin][proximaJogada -> col] = corPreta;
 			if (modoVerboso == 1)
 			imprimeMatriz(tabuleiro, tam, tam);
 		}
-		else {
-			printf("\n Sem jogada disponivel");
-		}
+
 		vitB = checaVitoria(tabuleiro, corBranca, tam);
 		vitP = checaVitoria(tabuleiro, corPreta, tam);
 	}
 	
 	if (vitB == 1) {
-		printf("\n Branca win!");
+		printf("b ganhou\n");
 		return 0;
 	}
 	if (vitP == 1){
-		printf("\n Preta Win");
+		printf("p ganhou\n");
 		return 0;
 	}
 	

@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 	/*
 	 * Casa adjascentes dada i,j				 
 		i, j-1
@@ -108,22 +107,10 @@ int **jogadaAdjascente (int **tabuleiro, int n, int **grau, int cor) {
 	return grau;
 }
 
-int **grauJogada (int **tabuleiro, int n, int **grau, int cor) {
-	
+int **grauJogada (int **tabuleiro, int n, int **grau, int cor) {	
 	grau = jogadaLivre(tabuleiro, n, grau, cor);
-	
-	printf("\n Livres:\n");
-	imprimeMatriz (grau, n, n);
-	
 	grau = jogadaPonte (tabuleiro, n, grau, cor);
-	
-	printf("\n Depois da Ponte:\n");
-	imprimeMatriz (grau, n, n);
-	
 	grau = jogadaAdjascente (tabuleiro, n, grau, cor);
-	
-	printf("\n Depois da Adsjacente:\n");
-	imprimeMatriz (grau, n, n);
 	return grau;
 }
 
@@ -448,7 +435,7 @@ int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col) {
 	p -> lin = lin;
 	p -> col = col;
 	movimento = criaPilha(n*n);
-	if (movimento == NULL) printf("\n merda");
+	if (movimento == NULL) return 0;
 	atual = 1;
 	mov = 1;
 	ok=0;
@@ -477,7 +464,6 @@ int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col) {
 		}
 		else { /* BakcTrack*/
 			if(pilhaVazia(movimento) == 1) {
-				printf("\n Deu ruim.");
 				return 0;
 			}
 			else { 
@@ -487,10 +473,7 @@ int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col) {
 				mov++;
 			}
 		}
-		
-		
 	}
-	
 	if (chegouFinal (tabuleiro, n, p -> lin,p -> col, cor) == 1)
 		return 1;
 	return 0;

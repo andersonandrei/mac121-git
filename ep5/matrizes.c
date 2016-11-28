@@ -38,11 +38,16 @@ void imprimeMatriz(int **tab, int lin, int col) {
 		printf("\n");
 		for(j=0; j<col; j++) {
 			if (tab[i][j] == -2)
-				printf("    -");
-			else
-				printf("%4d ",tab[i][j]);
+				printf("- ");
+			else {
+				if (tab[i][j] == 1)
+					printf("b ");
+				if (tab[i][j] == 0)
+					printf("p "); 
+			}
 		}
 	}
+	printf("\n");
 	return;
 }
 
