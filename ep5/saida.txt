@@ -1,0 +1,1500 @@
+
+Faca uma jogada (m,n) :
+ Antes da Ponte:
+
+   0    0    0    0    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Depois da Ponte:
+
+   0    0    0    0    0 
+   0    0   10    0    0 
+   0   10    0    0    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Depois da Adsjacente:
+
+   0    5    0    0    0 
+   5    5   10    0    0 
+   0   10    0    0    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Jogo:
+   1     -    -    -    -
+    -    -    -    -    -
+    -   0     -    -    -
+    -    -    -    -    -
+    -    -    -    -    -
+ Ta em i : 0
+ Ultimo a ser olhado: 0 0 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 0
+ AQUIII mandou checar com 0 0 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 0
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 0
+ AQUIII mandou checar com 0 0 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 0
+ AQUIII mandou checar com 0 0 --------- 
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 0
+ AQUIII mandou checar com 0 0 --------- 
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 0
+ AQUIII mandou checar com 0 0 --------- 
+ mov ++
+ Deu ruim.
+Faca uma jogada (m,n) :
+ Antes da Ponte:
+
+   0    5    0    0    0 
+   5    5   10    0    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Depois da Ponte:
+
+   0    5    0    0    0 
+   5    5   20   10    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Depois da Adsjacente:
+
+   0   10    0    5    0 
+  10   10   20   10    5 
+   0    0    0    0    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Jogo:
+   1     -    -    -   1 
+    -    -   0     -    -
+    -   0     -    -    -
+    -    -    -    -    -
+    -    -    -    -    -
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Deu ruim.
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Deu ruim.
+Faca uma jogada (m,n) :
+ Antes da Ponte:
+
+   0   10    0    5    0 
+  10   10    0   10    5 
+   0    0    0    0    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Depois da Ponte:
+
+   0   10   10    5    0 
+  10   10    0   20    5 
+   0    0    0   10    0 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Depois da Adsjacente:
+
+   0   15   10   15    0 
+  15   15    0   25    5 
+   0    0    0   10    5 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Jogo:
+   1     -    -    -   1 
+    -    -   0    0    1 
+    -   0     -    -    -
+    -    -    -    -    -
+    -    -    -    -    -
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ Deixou mover
+ Andou pra:mov 5
+ Mandou andar
+ ---Andou pra: 1 4
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 1 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 6
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Deu ruim.
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Deu ruim.
+Faca uma jogada (m,n) :
+ Antes da Ponte:
+
+   0   15   10   15    0 
+  15   15    0    0    5 
+   0    0    0   10    5 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Depois da Ponte:
+
+   0   15   20   15    0 
+  15   15    0    0    5 
+   0    0    0   20   15 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Depois da Adsjacente:
+
+   0   20   25   15    0 
+  20   20    0    0    5 
+   0    0    0   20   20 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Jogo:
+   1     -   0    1    1 
+    -    -   0    0    1 
+    -   0     -    -    -
+    -    -    -    -    -
+    -    -    -    -    -
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ Deixou mover
+ Andou pra:mov 4
+ Mandou andar
+ ---Andou pra: 0 3
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ Deixou mover
+ Andou pra:mov 6
+ Mandou andar
+ ---Andou pra: 1 4
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ Deixou mover
+ Andou pra:mov 2
+ Mandou andar
+ ---Andou pra: 0 4
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 3
+ Olhando pra mov = 3
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 7
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 5
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Deu ruim.
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ Deixou mover
+ Andou pra:mov 5
+ Mandou andar
+ ---Andou pra: 1 4
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 1 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ Deixou mover
+ Andou pra:mov 3
+ Mandou andar
+ ---Andou pra: 0 3
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ Deixou mover
+ Andou pra:mov 1
+ Mandou andar
+ ---Andou pra: 0 4
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 2
+ Olhando pra mov = 2
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 4
+ Olhando pra mov = 4
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 6
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Deu ruim.
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ Deixou mover
+ Andou pra:mov 4
+ Mandou andar
+ ---Andou pra: 0 3
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ Deixou mover
+ Andou pra:mov 6
+ Mandou andar
+ ---Andou pra: 1 4
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ Deixou mover
+ Andou pra:mov 2
+ Mandou andar
+ ---Andou pra: 0 4
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 3
+ Olhando pra mov = 3
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 7
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 5
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Deu ruim.
+Faca uma jogada (m,n) :
+ Antes da Ponte:
+
+   0   20    0   15    0 
+  20   20    0    0    5 
+   0    0    0   20   20 
+   0    0    0    0    0 
+   0    0    0    0    0 
+ Depois da Ponte:
+
+   0   30    0   15    0 
+  20   20    0    0    5 
+   0    0   10   30   30 
+   0   10    0    0    0 
+   0    0    0    0    0 
+ Depois da Adsjacente:
+
+   0   35    0   15    0 
+  20   30    0    0    5 
+   5    0   10   30   35 
+   0   10    0    0    0 
+   0    0    0    0    0 
+ Jogo:
+   1     -   0    1    1 
+   1     -   0    0    1 
+    -   0     -    -   0 
+    -    -    -    -    -
+    -    -    -    -    -
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ Deixou mover
+ Andou pra:mov 4
+ Mandou andar
+ ---Andou pra: 0 3
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ Deixou mover
+ Andou pra:mov 6
+ Mandou andar
+ ---Andou pra: 1 4
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ Deixou mover
+ Andou pra:mov 2
+ Mandou andar
+ ---Andou pra: 0 4
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 3
+ Olhando pra mov = 3
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 7
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 5
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Deu ruim.
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ Deixou mover
+ Andou pra:mov 5
+ Mandou andar
+ ---Andou pra: 1 4
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 1 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ Deixou mover
+ Andou pra:mov 3
+ Mandou andar
+ ---Andou pra: 0 3
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ Deixou mover
+ Andou pra:mov 1
+ Mandou andar
+ ---Andou pra: 0 4
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 2
+ Olhando pra mov = 2
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 4
+ Olhando pra mov = 4
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 6
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Deu ruim.
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ Deixou mover
+ Andou pra:mov 4
+ Mandou andar
+ ---Andou pra: 0 3
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ Deixou mover
+ Andou pra:mov 6
+ Mandou andar
+ ---Andou pra: 1 4
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ Deixou mover
+ Andou pra:mov 2
+ Mandou andar
+ ---Andou pra: 0 4
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 3
+ Olhando pra mov = 3
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 7
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 5
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Deu ruim.
+Faca uma jogada (m,n) :
+ Antes da Ponte:
+
+   0    0    0   15    0 
+  20   30    0    0    5 
+   5    0   10   30    0 
+   0   10    0    0    0 
+   0    0    0    0    0 
+ Depois da Ponte:
+
+   0    0    0   15    0 
+  20   30    0    0    5 
+   5    0   30   40    0 
+   0   20    0    0    0 
+   0    0    0    0    0 
+ Depois da Adsjacente:
+
+   0    0    0   15    0 
+  20   45    0    0    5 
+  10    0   30   40    0 
+   0   20    0    0    0 
+   0    0    0    0    0 
+ Jogo:
+   1    1    0    1    1 
+   1    0    0    0    1 
+    -   0     -    -   0 
+    -    -    -    -    -
+    -    -    -    -    -
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ Deixou mover
+ Andou pra:mov 4
+ Mandou andar
+ ---Andou pra: 0 3
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ Deixou mover
+ Andou pra:mov 6
+ Mandou andar
+ ---Andou pra: 1 4
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ Deixou mover
+ Andou pra:mov 2
+ Mandou andar
+ ---Andou pra: 0 4
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 3
+ Olhando pra mov = 3
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 7
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 5
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Deu ruim.
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ Deixou mover
+ Andou pra:mov 5
+ Mandou andar
+ ---Andou pra: 1 4
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 1 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ Deixou mover
+ Andou pra:mov 3
+ Mandou andar
+ ---Andou pra: 0 3
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ Deixou mover
+ Andou pra:mov 1
+ Mandou andar
+ ---Andou pra: 0 4
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 2
+ Olhando pra mov = 2
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 4
+ Olhando pra mov = 4
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 6
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Deu ruim.
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ Deixou mover
+ Andou pra:mov 4
+ Mandou andar
+ ---Andou pra: 0 3
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4
+ Deixou mover
+ Andou pra:mov 6
+ Mandou andar
+ ---Andou pra: 1 4
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3
+ Deixou mover
+ Andou pra:mov 2
+ Mandou andar
+ ---Andou pra: 0 4
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 3
+ Olhando pra mov = 3
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 0 3 EM i = 2 : 1 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 7
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 5
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Deu ruim.
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 
+ Deixou mover
+ Andou pra:mov 5
+ Mandou andar
+ ---Andou pra: 1 4
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 1 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4
+ Deixou mover
+ Andou pra:mov 3
+ Mandou andar
+ ---Andou pra: 0 3
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ Deixou mover
+ Andou pra:mov 1
+ Mandou andar
+ ---Andou pra: 0 4
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 1
+ Olhando pra mov = 1
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 2
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 ---------  EM i = 0 : 0 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 3 mov = 2
+ Olhando pra mov = 2
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 3
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 4
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 0 3
+ AQUIII mandou checar com 0 3 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4 EM i = 2 : 0 3
+ mov ++
+ Ta em i : 1
+ Ultimo a ser olhado: 1 4 mov = 4
+ Olhando pra mov = 4
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Olhando pra mov = 5
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Olhando pra mov = 6
+ pode mover? com 1 4
+ AQUIII mandou checar com 1 4 ---------  EM i = 0 : 0 4 EM i = 1 : 1 4
+ mov ++
+ Ta em i : 0
+ Ultimo a ser olhado: 0 4 mov = 6
+ Olhando pra mov = 6
+ pode mover? com 0 4
+ AQUIII mandou checar com 0 4 --------- 

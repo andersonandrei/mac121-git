@@ -23,34 +23,34 @@
 		
 	*/
 
-int casaLivre (int **tabuleiro, int i, int j) {
-	if ( (i >= 0 && i < 14 && j >= 0 && j < 14) && (tabuleiro[i][j] != 1 && tabuleiro[i][j] != 0) )
+int casaLivre (int **tabuleiro,int n, int i, int j) {
+	if ( (i >= 0 && i < n && j >= 0 && j < n) && (tabuleiro[i][j] != 1 && tabuleiro[i][j] != 0) )
 		return 1;
 	return 0;
 }
 
-int **jogadaPonte (int **tabuleiro, int **grau, int cor, int n) {
+int **jogadaPonte (int **tabuleiro, int n, int **grau, int cor) {
 	int i, j;
 	for (i = 0; i < n; i++ ){
 		for (j = 0; j < n; j++) {
 			if (tabuleiro[i][j] == cor) {
 				
-				if (casaLivre (tabuleiro, i-2, j-1) )
+				if (casaLivre (tabuleiro, n, i-2, j-1) )
 					grau[i-2][j-1] += 10;
 				
-				if (casaLivre (tabuleiro, i-1, j-2) )
+				if (casaLivre (tabuleiro, n, i-1, j-2) )
 					grau[i-1][j-2] += 10;
 				
-				if (casaLivre (tabuleiro, i-1, j+1) )
+				if (casaLivre (tabuleiro, n, i-1, j+1) )
 					grau[i-1][j+1] += 10;
 				
-				if (casaLivre (tabuleiro, i+1, j-1) )
+				if (casaLivre (tabuleiro, n, i+1, j-1) )
 					grau[i+1][j-1] += 10;
 	
-				if (casaLivre (tabuleiro, i+2, j+1) )
+				if (casaLivre (tabuleiro, n, i+2, j+1) )
 					grau[i+2][j+1] += 10;
 					
-				if (casaLivre (tabuleiro, i+1, j+2) )
+				if (casaLivre (tabuleiro, n, i+1, j+2) )
 					grau[i+1][j+2] += 10;
 			}
 		}
@@ -58,27 +58,27 @@ int **jogadaPonte (int **tabuleiro, int **grau, int cor, int n) {
 	return grau;
 }
 
-int **jogadaAdjascente (int **tabuleiro, int **grau, int cor, int n) {
+int **jogadaAdjascente (int **tabuleiro, int n, int **grau, int cor) {
 	int i, j;
 	for (i = 0; i < n; i++ ){
 		for (j = 0; j < n; j++) {
 			if (tabuleiro[i][j] == cor) {
-				if (casaLivre (tabuleiro, i, j-1) )
+				if (casaLivre (tabuleiro, n, i, j-1) )
 					grau[i][j-1] += 5;
 					
-				if (casaLivre (tabuleiro, i-1, j) )
+				if (casaLivre (tabuleiro, n, i-1, j) )
 					grau[i-1][j] += 5;
 					
-				if (casaLivre (tabuleiro, i-1, j-1) )
+				if (casaLivre (tabuleiro, n, i-1, j-1) )
 					grau[i-1][j-1] += 5;
 				
-				if (casaLivre (tabuleiro, i, j+1) )
+				if (casaLivre (tabuleiro, n, i, j+1) )
 					grau[i][j+1] += 5;
 				
-				if (casaLivre (tabuleiro, i+1, j) )
+				if (casaLivre (tabuleiro, n, i+1, j) )
 					grau[i+1][j] += 5;
 				
-				if (casaLivre (tabuleiro, i+1, j+1) )
+				if (casaLivre (tabuleiro, n, i+1, j+1) )
 					grau[i+1][j+1] += 5;
 			}
 		}
@@ -86,15 +86,15 @@ int **jogadaAdjascente (int **tabuleiro, int **grau, int cor, int n) {
 	return grau;
 }
 
-int **grauJogada (int **tabuleiro, int **grau, int cor, int n) {
+int **grauJogada (int **tabuleiro, int n, int **grau, int cor) {
 	printf("\n Antes da Ponte:\n");
-	imprimeMatriz (grau, 14, 14);
-	grau = jogadaPonte (tabuleiro, grau, cor, n);
+	imprimeMatriz (grau, n, n);
+	grau = jogadaPonte (tabuleiro, n, grau, cor);
 	printf("\n Depois da Ponte:\n");
-	imprimeMatriz (grau, 14, 14);
-	grau = jogadaAdjascente (tabuleiro, grau, cor, n);
+	imprimeMatriz (grau, n, n);
+	grau = jogadaAdjascente (tabuleiro, n, grau, cor);
 	printf("\n Depois da Adsjacente:\n");
-	imprimeMatriz (grau, 14, 14);
+	imprimeMatriz (grau, n, n);
 	return grau;
 }
 
@@ -136,7 +136,7 @@ posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt) {
 		}
 	}
 	sort = 0; /* Ajustar o sort */
-	while (casaLivre (tabuleiro, possibilidades[sort] -> lin, possibilidades[sort] -> col) == 0) {
+	while (casaLivre (tabuleiro,  n, possibilidades[sort] -> lin, possibilidades[sort] -> col) == 0) {
 		sort = rand() % 10;
 		printf("\n Sorteou : %d",sort);
 	}
@@ -145,14 +145,14 @@ posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt) {
 	return possibilidades[sort];
 }
 
-posicao buscaForcaMatriz(int **tab, int forca) {
+posicao buscaForcaMatriz(int **tab, int n, int forca) {
 	posicao casa;
 	int i, j;
 	fflush (stdout);
 	casa = malloc (sizeof (pos) );
 	
-	for (i = 0; i < 14; i++) {
-		for (j = 0; j < 14; j++) {
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < n; j++) {
 			if (tab[i][j] == forca) {
 				casa -> lin = i;
 				casa -> col = j;
@@ -168,64 +168,39 @@ posicao *pecasNasParede (int **tabuleiro, int n, int cor, int *tamLista) {
 	int i, k = 0;
 	p = malloc (sizeof (pos) );
 	lista = malloc (n * sizeof (pos) );
-	
-	printf("\n Entrou nas Pecas aprede, n = %d",n);
-	fflush(stdout);
+
 	if (cor == 1) { /* Definido que brancas vao da linha 0 até a linha n */
-		printf("\n Cor = %d",cor);
-		fflush(stdout);
+
 		for (i = 0; i < n; i++) {
-			printf("\n i = %d",i);
 			if (tabuleiro[0][i] == 1) {
-				printf("\n colocou na lista das paredes na pos k %d: %d %d",k,0,i);
 				p -> lin = 0;
 				p -> col = i;
-				printf("\n colocou na lista das paredes na pos k %d: %d---",k,i);
 				lista[k] = p;
 				k++;
 				
 			}
 		}
-		printf("\n Confirmando 1--------:");
-		for (i = 0; i < k; i++ )
-			printf("\n\n em %d : %d %d",i, lista[i] -> lin, lista[i] -> col );
 	}
 	
 	else {
-		printf("\n Cor = %d",cor);
-		fflush(stdout);
 		for (i = 0; i < n; i++) {
-			printf("\n Ta no i,j = %d",i);
-			fflush(stdout);
 			if (tabuleiro[i][0] == 0) {
-				printf("\n Achou");
-				fflush(stdout);
 				p -> lin = i;
 				p -> col = 0;
 				lista[k] = p;
 				k++;
 			}
 		}
-		printf("\n Confirmando  2--------:");
-		for (i = 0; i < k; i++ )
-			printf("\n\n em %d : %d %d",i, lista[i] -> lin, lista[i] -> col );
 	}
-	printf("\n Fim");
-	fflush(stdout);
+
 	*tamLista = k;
-	
-	printf("\n Confirmando --------:");
-	for (i = 0; i < *tamLista; i++ )
-		printf("\n\n em %d : %d %d",i, lista[i] -> lin, lista[i] -> col );
-	
-	
+
 	return lista;
 }
 
 int indiceValido (int **tabuleiro, int n, int i, int j) {
 	if ((i >= 0 && i < n) && (j >= 0 && j < n)) return 1;
 	return 0;
-
 }
 
 posicao *checaAdjascentes (int **tabuleiro, int n, int cor, int *tamLista, int i, int j) {
@@ -348,10 +323,8 @@ posicao volta(int **tabuleiro, int i, int j, int mov, int *ultMov, int n) {
 		*ultMov = 1;
 	}
 	if (mov == 5) {
-		printf("\n Entrou pra desandar aqui ---");
 		p -> lin = i-1;
 		p -> col = j;
-		printf("\n\n OLHAAAAAa para %d %d", p-> lin, p -> col );
 		*ultMov = 2;
 	}
 	if (mov == 6) {
@@ -359,18 +332,17 @@ posicao volta(int **tabuleiro, int i, int j, int mov, int *ultMov, int n) {
 		p -> col = j-1;
 		*ultMov = 3;
 	}
-	printf("\n\n OLHAAAAAa 2  para %d %d", p-> lin, p -> col );
 	return p;
 }
 
 int chegouFinal (int **tabuleiro, int n, int i, int j, int cor) {
 	if (cor == 1) {
-		if (i != 13)
+		if (i != n-1)
 			return 0;
 		return 1;
 	}
 	else {
-		if (j != 13)
+		if (j != n-1)
 			return 0;
 		return 1;
 	}
@@ -388,7 +360,8 @@ void zeraVetorPos (posicao *vetor, int n) {
 
 int checaNoVetor (posicao *vetor, int n, int l, int c) {
 	int i;
-	for (i = 0; i < n * n; i++) {
+	fflush(stdout);
+	for (i = 0; i < n ; i++) {
 		if (vetor[i] -> lin == l && vetor[i] -> col == c)
 			return 1;
 	}
@@ -410,7 +383,7 @@ int checaVitoria (int **tabuleiro, int cor, int n) {
 
 
 int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col) {
-	int mov , ultMov, ok, atual, qntJaViu = 1;
+	int mov , ultMov, ok, atual, qntJaViu = 0;
 	posicao p, *jaViu;
 	pilha *movimento;
 	jaViu = malloc ((n*n) * sizeof (pos) );
@@ -418,7 +391,6 @@ int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col) {
 	p = malloc (sizeof (pos) );
 	p -> lin = lin;
 	p -> col = col;
-	jaViu[0] = p;
 	movimento = criaPilha(n*n);
 	if (movimento == NULL) printf("\n merda");
 	atual = 1;
@@ -436,11 +408,12 @@ int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col) {
 				mov ++;
 			}
 		}
-		if(ok ==1) {
-			printf("\n Moveu para %d",mov);
+		if(ok == 1) {
 			empilha(movimento,mov);
-			p = anda(tabuleiro,p -> lin, p -> col,mov,n);
 			jaViu[qntJaViu] = p;
+			qntJaViu ++;
+			p = anda(tabuleiro, p -> lin, p -> col,mov, n);
+			
 			atual++;
 			ultMov = mov;
 			mov = 1;
@@ -452,16 +425,16 @@ int checaCaminho (int **tabuleiro, int cor, int n, int lin, int col) {
 				return 0;
 			}
 			else { 
-				printf("\n Despula: ");
 				mov = desempilha(movimento);
-				printf("\n mov antigo: %d",mov);
 				p = volta(tabuleiro,p -> lin, p -> col,mov,&ultMov,n);
-				printf("\n ultmov : %d",ultMov);
 				atual--;
 				mov++;
 			}
 		}
+		
+		
 	}
+	
 	
 	if (chegouFinal (tabuleiro, n, p -> lin,p -> col, cor) == 1)
 		return 1;

@@ -7,45 +7,67 @@
 
 int main () {
 	int **tabuleiro, **grauJogadaBranca, **grauJogadaPreta;
-	int m, n ,tam = 14;
+	int m, n, vitP, vitB,tam = 5;
+	int corPreta = 0, corBranca = 1;
 	forcaJogada jog;
 	posicao proximaJogada;
 	
 	proximaJogada = malloc (sizeof (pos) );
 	jog = malloc (sizeof (jogada) );
 	
-	grauJogadaBranca = criaMatriz (14, 14);
-	grauJogadaPreta = criaMatriz (14, 14);
-	tabuleiro = criaMatriz(14, 14);
+	grauJogadaBranca = criaMatriz (tam, tam);
+	grauJogadaPreta = criaMatriz (tam, tam);
+	tabuleiro = criaMatriz(tam, tam);
 	
-	zeraMatriz(tabuleiro, 14, 14, -2);
-	zeraMatriz(grauJogadaBranca, 14, 14, 0);
-	zeraMatriz(grauJogadaPreta, 14, 14, 0);
+	zeraMatriz(tabuleiro, tam, tam, -2);
+	zeraMatriz(grauJogadaBranca, tam, tam, 0);
+	zeraMatriz(grauJogadaPreta, tam, tam, 0);
 
-	while (checaVitoria(tabuleiro, 0, tam) == 0 && checaVitoria(tabuleiro, 1, tam) == 0) {
+	vitB = checaVitoria(tabuleiro, corBranca, tam);
+	vitP = checaVitoria(tabuleiro, corPreta, tam);
+
+	while (vitP == 0 && vitB == 0) {
 		printf("\nFaca uma jogada (m,n) :");
 		scanf("%d %d", &m,&n);
 		
-		while (casaLivre (tabuleiro, m, n) == 0) {
+		if (m == tam/2 && n == tam/2) {
+			corBranca = corPreta;
+			corPreta = 1;
+		}
+		
+		while (casaLivre (tabuleiro, tam, m, n) == 0) {
 			printf("\nJogada invalida \nFaca uma jogada (m,n) :");
 			scanf("%d %d", &m,&n);
 		}
-		tabuleiro[m][n] = 1;
+		tabuleiro[m][n] = corBranca;
+		printf("\n Colocou 1 em : %d %d ", m,n);
 			
-		
 		/* Calcular jogada da maquina */
-		grauJogadaPreta = grauJogada(tabuleiro, grauJogadaPreta, 1, 14);
-		jog = jogadaMaisForte (grauJogadaPreta, 14);
+		grauJogadaPreta = grauJogada(tabuleiro, tam, grauJogadaPreta, corPreta);
+		jog = jogadaMaisForte (grauJogadaPreta, tam);
 		if (jog -> qnt > 1) {
-			proximaJogada = sorteiaJogada (tabuleiro, grauJogadaPreta, 14, jog -> forca, jog -> qnt);
+			proximaJogada = sorteiaJogada (tabuleiro, grauJogadaPreta, tam, jog -> forca, jog -> qnt);
 		}
 		else { /* Só uma casa com aquela força de ocorrencia */
-			proximaJogada = buscaForcaMatriz(grauJogadaPreta, jog -> forca); /* Fazer a busca Matriz */
+			proximaJogada = buscaForcaMatriz(grauJogadaPreta, tam, jog -> forca); /* Fazer a busca Matriz */
 		}
-	
-		tabuleiro[proximaJogada -> lin][proximaJogada -> col] = 0;
-		imprimeMatriz(tabuleiro, 14, 14);
+		printf("\n Sorteou : %d %d ", proximaJogada -> lin,proximaJogada -> col);
+		tabuleiro[proximaJogada -> lin][proximaJogada -> col] = corPreta;
+		printf("\n Jogo:");
+		imprimeMatriz(tabuleiro, tam, tam);
+		vitB = checaVitoria(tabuleiro, corBranca, tam);
+		vitP = checaVitoria(tabuleiro, corPreta, tam);
 	}
-
+	
+	if (vitB == 1) {
+		printf("\n Branca win!");
+		return 0;
+	}
+	if (vitP == 1){
+		printf("\n Preta Win");
+		return 0;
+	}
+	
 	return 0;
+
 }

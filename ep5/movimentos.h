@@ -13,19 +13,19 @@ typedef jogada *forcaJogada;
 
 typedef pos *posicao;
 
-int casaLivre (int **tabuleiro, int i, int j);
+int casaLivre (int **tabuleiro,int n, int i, int j);
 
-int **jogadaPonte (int **tabuleiro, int **grau, int cor, int n);
+int **jogadaPonte (int **tabuleiro, int n, int **grau, int cor);
 
-int **jogadaAdjascente (int **tabuleiro, int **grau, int cor, int n);
+int **jogadaAdjascente (int **tabuleiro, int n, int **grau, int cor);
 
-int **grauJogada (int **tabuleiro, int **grau, int cor, int n);
+int **grauJogada (int **tabuleiro, int n, int **grau, int cor);
 
 forcaJogada jogadaMaisForte (int ** grau, int n);
 	
 posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt);
 
-posicao buscaForcaMatriz(int **tab, int forca);
+posicao buscaForcaMatriz(int **tab,int n, int forca);
 
 posicao *pecasNasParede (int **tabuleiro, int n, int cor, int *tamLista);
 
