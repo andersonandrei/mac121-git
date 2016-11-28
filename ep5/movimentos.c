@@ -6,7 +6,8 @@
 #include <time.h>
 
 
-	/*Casa adjascentes dada i,j				 
+	/*
+	 * Casa adjascentes dada i,j				 
 		i, j-1
 		i-1, j
 		i-1, j-1
@@ -24,7 +25,7 @@
 	*/
 
 int casaLivre (int **tabuleiro,int n, int i, int j) {
-	if ( (i >= 0 && i < n && j >= 0 && j < n) && (tabuleiro[i][j] != 1 && tabuleiro[i][j] != 0) )
+	if ( i >= 0 && i < n && j >= 0 && j < n && tabuleiro[i][j] != 1 && tabuleiro[i][j] != 0 )
 		return 1;
 	return 0;
 }
@@ -55,6 +56,9 @@ int **jogadaPonte (int **tabuleiro, int n, int **grau, int cor) {
 			}
 		}
 	}
+	
+	printf("\n To retornando grau:");
+	imprimeMatriz(grau,n,n);
 	return grau;
 }
 
@@ -87,6 +91,9 @@ int **jogadaAdjascente (int **tabuleiro, int n, int **grau, int cor) {
 }
 
 int **grauJogada (int **tabuleiro, int n, int **grau, int cor) {
+	
+	printf("\n Recebeeeeeu");
+	imprimeMatriz(grau, n, n);
 	printf("\n Antes da Ponte:\n");
 	imprimeMatriz (grau, n, n);
 	grau = jogadaPonte (tabuleiro, n, grau, cor);
@@ -125,6 +132,7 @@ posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt) {
 	srand( (unsigned)time(NULL) );
 	p = malloc (sizeof (pos) );
 	possibilidades = malloc (sizeof (qnt * sizeof (pos)) );
+	zeraVetorPos(possibilidades, qnt);
 	for (i = 0; i < n; i++) {
 		for (j = 0; j <n; j++) {
 			if (grau[i][j] == g) {
@@ -136,27 +144,28 @@ posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt) {
 		}
 	}
 	sort = 0; /* Ajustar o sort */
-	while (casaLivre (tabuleiro,  n, possibilidades[sort] -> lin, possibilidades[sort] -> col) == 0) {
+	/* while (casaLivre (tabuleiro,  n, possibilidades[sort] -> lin, possibilidades[sort] -> col) == 0) {
 		sort = rand() % 10;
 		printf("\n Sorteou : %d",sort);
 	}
-	
+	*/
 	grau[possibilidades[sort] -> lin][possibilidades[sort] -> col] = 0;
 	return possibilidades[sort];
 }
 
-posicao buscaForcaMatriz(int **tab, int n, int forca) {
-	posicao casa;
-	int i, j;
-	fflush (stdout);
-	casa = malloc (sizeof (pos) );
+posicao buscaForcaMatriz(int **tabuleiro, int n, int **grau, int tamGrau, int forca) {
 	
+	
+	/* Arrumar aqui pra nao dar xabu quando nao encontra nenhuma casa*/
+	posicao casa;
+	int i, j, achou = 0;
+	casa = malloc (sizeof (pos) );
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < n; j++) {
-			if (tab[i][j] == forca) {
+			if (grau[i][j] == forca && tabuleiro[i][j] != 1 && tabuleiro[i][j] != 0 ) {
 				casa -> lin = i;
 				casa -> col = j;
-				tab[i][j] = 0;
+				grau[i][j] = 0;
 			}
 		}
 	}

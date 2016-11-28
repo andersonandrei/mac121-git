@@ -25,7 +25,7 @@ forcaJogada jogadaMaisForte (int ** grau, int n);
 	
 posicao sorteiaJogada (int **tabuleiro, int **grau, int n, int g, int qnt);
 
-posicao buscaForcaMatriz(int **tab,int n, int forca);
+posicao buscaForcaMatriz(int **tabuleiro, int n, int **grau,int tamGrau, int forca);
 
 posicao *pecasNasParede (int **tabuleiro, int n, int cor, int *tamLista);
 
